@@ -1,0 +1,10 @@
+<aside class="sidebar">
+  <nav class="local-nav nav-collapse closed">
+    <h1 class="is-visuallyhidden">Menu</h1>
+    <ul>
+      {% for link in page.sidebar %}
+      <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

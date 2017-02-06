@@ -1,0 +1,8 @@
+<fieldset>
+  <legend id="{{ include.id }}-legend">{{ include.question }}</legend>
+  {% assign answers = include.answers | split: "|" %}
+  {% for answer in answers %}
+  <input id="{{ answer | slugify }}" name="reply" type="radio" aria-describedby="{{ include.id }}-legend"/>
+  <label for="{{ answer | slugify }}">{{ answer }}</label>
+  {% endfor %}
+</fieldset>

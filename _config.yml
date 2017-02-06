@@ -1,0 +1,11 @@
+defaults:
+  -
+   scope:
+     path: ""
+   values:
+     layout: "default"
+     sidebar:
+     - href: '/'
+       title: 'Index'
+     - href: '/forms'
+       title: 'Forms'
