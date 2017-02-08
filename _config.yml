@@ -5,12 +5,12 @@ defaults:
    values:
      layout: "default"
      sidebar:
-     - href: '/'
+     - href: '/dta_rapid'
        title: 'Index'
      - href: 'forms'
        title: 'Forms'
      topnav:
-     - href: '/'
+     - href: '/dta_rapid'
        title: 'Introduction'
      - href: 'README'
        title: 'Readme.md'
