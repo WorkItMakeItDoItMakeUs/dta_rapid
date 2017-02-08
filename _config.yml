@@ -7,10 +7,10 @@ defaults:
      sidebar:
      - href: '/'
        title: 'Index'
-     - href: '/forms'
+     - href: 'forms'
        title: 'Forms'
      topnav:
      - href: '/'
        title: 'Introduction'
-     - href: '/README'
+     - href: 'README'
        title: 'Readme.md'
