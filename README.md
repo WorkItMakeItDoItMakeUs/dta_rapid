@@ -2,6 +2,8 @@
 ---
 # dta_rapid
 
+[See example site](https://gtrogers.github.io/dta_rapid/)
+
 This is a Jekyll theme designed for rapidly prototyping websites in the AusDTA style.
 
 ## Installation
