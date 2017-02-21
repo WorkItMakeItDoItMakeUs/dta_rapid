@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "dta_rapid"
-  spec.version       = "0.1.0"
+  spec.version       = "0.2.0"
   spec.authors       = ["Gareth Rogers"]
   spec.email         = ["grogers@thoughtworks.com"]
 
