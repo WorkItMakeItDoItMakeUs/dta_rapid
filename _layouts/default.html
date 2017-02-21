@@ -4,66 +4,10 @@
   <head>
     <meta charset="utf-8">
     <title>Title</title>
+    <link rel="stylesheet" href="assets/style.css"
   </head>
 
   <body id="main">
-    {% unless page.disable_header %}
-    <header role="banner">
-      <section class="page-header">
-        <div class="wrapper">
-          <div class="page-header__logo">
-            <a href="/" class="rpk--header-link">
-              <span class="logo">Rapid Prototyping Toolkit</span>
-            </a>
-            {% include badge.html type="default" text="Draft" %}
-          </div>
-          <div class="site-nav">
-            <nav id="nav" class="site-nav__wrapper" aria-label="global navigation" aria-hidden="false">
-              <ul>
-                {% for link in page.topnav %}
-                <li><a href="{{ link.href }}">{{ link.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </section>
-    </header>
-    {% endunless %}
-    <main role="main">
-    <article>
-      {{ content }}
-    </article>
-    </main>
-    <footer role="contentinfo">
-      <div class="wrapper">
-        <section class="footer-top">
-          <nav>
-            <div class="footer-menu">
-              <h2>Footer Menu</h2>
-              <ul>
-                <li><a href="#">Related Link...</a></li>
-                <li><a href="#">Related Link...</a></li>
-                <li><a href="#">Related Link...</a></li>
-              </ul>
-            </div>
-          </nav>
-        </section>
-        <section>
-          <div class="footer-links">
-            <nav>
-              <ul>
-                <li><a href="#">Global Link...</a></li>
-                <li><a href="#">Global Link...</a></li>
-              </ul>
-            </nav>
-          </div>
-        </section>
-      </div>
-    </footer>
-    <link rel="stylesheet" href="assets/ui-kit.min.css">
-    <link rel="stylesheet" href="assets/logo.css">
-    <script type="text/javascript" src="assets/ui-kit.min.js"></script>
   </body>
 
 </html>
