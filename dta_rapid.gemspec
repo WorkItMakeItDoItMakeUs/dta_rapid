@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "dta_rapid"
-  spec.version       = "0.2.0"
+  spec.version       = "0.2.1"
   spec.authors       = ["Gareth Rogers"]
   spec.email         = ["grogers@thoughtworks.com"]
 
@@ -16,4 +16,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bourbon", "~> 4.3.2"
+  spec.add_development_dependency "neat", "~> 2.0.0"
 end
