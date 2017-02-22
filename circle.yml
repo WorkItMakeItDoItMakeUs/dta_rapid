@@ -1,5 +1,10 @@
 
+dependencies:
+  - npm install
+
 test:
+  pre:
+    - npm run lint
   override: 
     - echo 'testing...'
         
