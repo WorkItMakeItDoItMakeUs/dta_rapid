@@ -2,12 +2,15 @@
 ---
 
 @import "mixins";
-@import 'grid-settings';
-@import 'vendor/neat/neat';
+@import "vendor/bourbon/bourbon"; // v4.2.7
+@import "grid-settings";
+@import "vendor/neat/neat"; // v1.7
 
 @import "normalize";
 @import "variables";
 @import "easings";
-@import 'colors';
+@import "colors";
 
-@import 'print';
+@import "components/text-input";
+
+@import "print";

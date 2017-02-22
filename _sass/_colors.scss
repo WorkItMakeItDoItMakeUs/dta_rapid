@@ -5,11 +5,12 @@ $grey:            #6e6e6e;
 $light-grey:      lighten($grey, 30%);
 $lighter-grey:    #f0f3f5;
 
-// Medicare Brand Colors
+$aqua:          #18788d;
 
-$medicare-green:  #008752;
-$medicare-yellow: #FFC423;
+// Brand Colors
 
+$medical-green:  #008752;
+$medical-yellow: #FFC423;
 
 // Status Colors
 
@@ -24,3 +25,17 @@ $light-yellow:    #fdf7dc;
 
 $blue:            #00bfe9;
 $light-blue:      #e8f5fa;
+
+$action-color: $aqua;
+
+$input-focus-color: lighten($aqua, 30%);
+
+$border-color:      $light-grey;
+$background-color:  white;
+
+$error-color: $red;
+$success-color:                $green;
+$warning-color:                $yellow;
+$info-color:                   $blue;
+
+$body-text-color:              $dark-grey;
