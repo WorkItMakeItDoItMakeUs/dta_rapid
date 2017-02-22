@@ -5,3 +5,4 @@ _site
 Gemfile.lock
 *.swp
 .DS_Store
+node_modules
