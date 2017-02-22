@@ -1,12 +1,13 @@
 ---
 ---
 
-@import "bourbon";
-@import 'base/grid-settings';
+@import "mixins";
+@import 'grid-settings';
 @import 'neat';
 
-@import "base/normalize";
-@import "base/variables";
-@import 'base/colors';
+@import "normalize";
+@import "variables";
+@import "easings";
+@import 'colors';
 
-@import 'base/print';
+@import 'print';
