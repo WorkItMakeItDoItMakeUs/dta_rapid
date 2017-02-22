@@ -1,0 +1,11 @@
+{
+  "name": "dta_rapid",
+  "repository": "git@github.com:gtrogers/dta_rapid.git",
+  "author": "@WorkItMakeItDoItMakeUs",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "dependencies": {
+    "eslint": "^3.16.0"
+  }
+}

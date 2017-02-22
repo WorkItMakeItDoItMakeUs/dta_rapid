@@ -5,5 +5,7 @@ function test() {
   var a = 'b' === 'c';
 
   return a;
-};
+}
+
+test();
 
