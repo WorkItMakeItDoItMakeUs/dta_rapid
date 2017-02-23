@@ -1,0 +1,187 @@
+html {
+  color: $body-text-color;
+  line-height: $base-leading;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+body {
+  font-size: 1rem;
+
+  @include media($tablet) {
+    font-size: 1.0625rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: $base-heading-leading;
+  font-weight: $base-font-weight;
+  margin-bottom: $tiny-spacing;
+  margin-top: $base-spacing;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: $bold-font-weight;
+  margin-bottom: $small-spacing;
+
+  @include media($tablet) {
+    font-size: 1.75rem;
+  }
+
+  @include media($desktop) {
+    font-size: 2.5rem;
+  }
+
+  &:first-of-type {
+    margin-top: $tiny-spacing;
+  }
+}
+
+@mixin h2 {
+  font-size: 2rem;
+  line-height: $small-leading;
+  margin-top: $base-spacing;
+  margin-bottom: 1em;
+
+  @include media($tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: $heading-font-weight;
+  margin-top: $medium-spacing + ($small-spacing / 3); // 38.133px; was 34.4px from Alz.
+  margin-bottom: $small-spacing;
+
+  @include media($tablet) {
+    font-size: 1.625rem;
+  }
+
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.125rem;
+  font-weight: $heading-font-weight;
+}
+
+// Document this later.
+.gov-speak {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: $base-heading-leading;
+    font-weight: $heading-font-weight;
+    margin-bottom: $tiny-spacing;
+    margin-top: $base-spacing;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: $small-leading;
+
+    @include media($tablet) {
+      font-size: 2.75rem;
+    }
+
+    @include media($desktop) {
+      font-size: 2.5rem;
+    }
+
+    &:first-of-type {
+      margin-top: $tiny-spacing;
+    }
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: $small-leading;
+
+    @include media($tablet) {
+      font-size: 2rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: $heading-font-weight;
+
+    @include media($tablet) {
+      font-size: 1.625rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.1875rem;
+    font-weight: $heading-font-weight;
+
+    @include media($tablet) {
+      font-size: 1.375rem;
+    }
+  }
+
+  h5 {
+    font-size: 1.0625rem;
+    font-weight: $heading-font-weight;
+  }
+
+  h6 {
+    font-size: 1.0625rem;
+    font-weight: $heading-font-weight;
+  }
+}
+
+@include media($desktop) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  li,
+  dl {
+    max-width: 38rem
+  }
+  .content-full-width {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+code,
+pre,
+samp,
+kbd {
+  font-family: $base-monospace;
+  font-size: $small-font-size;
+}
+
+kbd {
+  display: inline-block;
+  border: solid 1px $action-color--disabled;
+  border-radius: $base-border-radius;
+  box-shadow: 0 1px 0 0 $action-color--disabled;
+  background-color: $light-grey;
+  color: $action-color--hover;
+  text-align: center;
+  font-size: $small-font-size;
+  padding: 0 $small-spacing;
+  margin: 0 $tiny-spacing;
+}
+
+strong, b {
+  font-weight: $bold-font-weight;
+}

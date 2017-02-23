@@ -6,6 +6,8 @@ $light-grey:      lighten($grey, 30%);
 $lighter-grey:    #f0f3f5;
 
 $aqua:          #18788d;
+$navy:          #043751;
+$dark-navy:     darken($navy, 10%);
 
 // Brand Colors
 
@@ -40,14 +42,16 @@ $success-color:             $green;
 $warning-color:             $yellow;
 $info-color:                $blue;
 
-$button-bg-color:              $action-color;
-$button-bg-color--hover:       $action-color--hover;
-$button-bg-color--active:      $action-color--active;
-$button-bg-color--disabled:    $action-color--disabled;
+$body-text-color:           $dark-grey;
+
+$button-bg-color:             $action-color;
+$button-bg-color--hover:      $action-color--hover;
+$button-bg-color--active:     $action-color--active;
+$button-bg-color--disabled:   $action-color--disabled;
+
+$button-text-color:           white;
 
 $input-focus-color:         $focus-color;
 
 $border-color:              $light-grey;
 $background-color:          white;
-
-$body-text-color:           $dark-grey;

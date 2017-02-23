@@ -35,89 +35,85 @@ body {
 }
 
 main {
-  @include wrapper-padding;
-  @include outer-container;
+}
 
-  padding-top: $base-spacing * 2;
+.form-wrapper {
+  @include fill-parent;
 
-  .form-wrapper {
+  @include media($tablet) {
+    @include span-columns(4 of 6);
+  }
+}
+
+@include direction-context(right-to-left) {
+  .sidebar {
     @include fill-parent;
 
     @include media($tablet) {
-      @include span-columns(4 of 6);
+      @include span-columns(4 of 12);
+    }
+
+    @include media($desktop) {
+      @include span-columns(4 of 16);
     }
   }
 
-  @include direction-context(right-to-left) {
-    .sidebar {
-      @include fill-parent;
+  .content-main {
+    @include fill-parent;
 
-      @include media($tablet) {
-        @include span-columns(4 of 12);
-      }
-
-      @include media($desktop) {
-        @include span-columns(4 of 16);
-      }
+    @include media($tablet) {
+      @include span-columns(8 of 12);
     }
 
-    .content-main {
+    @include media($desktop) {
+      @include span-columns(12 of 16);
+    }
+
+    &:first-child {
+      @include reset-layout-direction;
       @include fill-parent;
+      @include shift(0);
 
       @include media($tablet) {
         @include span-columns(8 of 12);
-      }
-
-      @include media($desktop) {
-        @include span-columns(12 of 16);
-      }
-
-      &:first-child {
-        @include reset-layout-direction;
-        @include fill-parent;
         @include shift(0);
+      }
 
-        @include media($tablet) {
-          @include span-columns(8 of 12);
-          @include shift(0);
-        }
-
-        @include media($desktop) {
-          @include span-columns(10 of 16);
-          @include shift(0);
-        }
+      @include media($desktop) {
+        @include span-columns(10 of 16);
+        @include shift(0);
       }
     }
   }
+}
 
-  &.sidebar-has-controls {
-    @include reset-layout-direction;
+.sidebar-has-controls {
+  @include reset-layout-direction;
 
-    .sidebar {
-      @include fill-parent;
+  .sidebar {
+    @include fill-parent;
 
-      @include media($tablet) {
-        @include span-columns(4 of 12);
+    @include media($tablet) {
+      @include span-columns(4 of 12);
 
-        margin-left: 0;
-      }
-
-      @include media($desktop) {
-        @include span-columns(4 of 16);
-      }
+      margin-left: 0;
     }
 
-    .content-main {
-      @include fill-parent;
+    @include media($desktop) {
+      @include span-columns(4 of 16);
+    }
+  }
 
-      @include media($tablet) {
-        @include span-columns(8 of 12);
-      }
+  .content-main {
+    @include fill-parent;
 
-      @include media($desktop) {
-        @include span-columns(9 of 16);
-        @include shift(1);
-      }
+    @include media($tablet) {
+      @include span-columns(8 of 12);
+    }
+
+    @include media($desktop) {
+      @include span-columns(9 of 16);
+      @include shift(1);
     }
   }
 }
