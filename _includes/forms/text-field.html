@@ -10,9 +10,9 @@
     {{ include.label }}
   </label>
   <input
-    type="text"
-    id="{{ include.id | default: id }}"
     class="text-field__input"
+    type="{{ include.type | default: text }}"
+    id="{{ include.id | default: id }}"
     value="{{ include.value | default: "" }}"
     name="{{ include.name | default: name }}"
     {{ required }}
