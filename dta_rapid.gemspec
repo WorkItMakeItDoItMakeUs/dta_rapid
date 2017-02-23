@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "dta_rapid"
-  spec.version       = "0.2.6"
-  spec.authors       = ["Gareth Rogers"]
-  spec.email         = ["grogers@thoughtworks.com"]
+  spec.version       = "0.2.7"
+  spec.authors       = ["Gareth Rogers", "Andrew Carr", "Matt Chamberlain"]
+  spec.email         = ["grogers@thoughtworks.com", "andrew@2metres.com", "mchamber@thoughtworks.com"]
 
   spec.summary       = %q{Converting the DTA UI kit (see https://github.com/AusDTO/gov-au-ui-kit) into a Jekyll theme}
   spec.homepage      = "https://github.com/gtrogers/dta_rapid"
