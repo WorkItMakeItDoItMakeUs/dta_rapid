@@ -1,0 +1,20 @@
+{% assign id=include.id %}
+{% assign name=include.id %}
+
+{% if include.required %}
+  {% assign required="required" %}
+{% endif %}
+
+<div class="text-field">
+  <label class="text-field__label" for="{{ include.id | default: id }}">
+    {{ include.label }}
+  </label>
+  <input
+    type="text"
+    id="{{ include.id | default: id }}"
+    class="text-field__input"
+    value="{{ include.value | default: "" }}"
+    name="{{ include.name | default: name }}"
+    {{ required }}
+  />
+</div>

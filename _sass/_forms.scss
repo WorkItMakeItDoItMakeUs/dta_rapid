@@ -7,17 +7,19 @@
   background-color: $background-color;
   padding: $tiny-spacing;
 
-  &:invalid,
-  &.invalid {
-    outline: 2px solid $error-color;
-  }
-
   &.valid {
     outline: 2px solid $success-color;
   }
 
   &:focus {
     outline: 2px solid $input-focus-color;
+  }
+
+  &:not([value=""]) {
+    &:invalid,
+    &.invalid {
+      outline: 2px solid $error-color;
+    }
   }
 
   &:disabled,
@@ -28,8 +30,7 @@
   }
 }
 
-fieldset,
-p {
+fieldset {
   margin: 0 0 $medium-spacing 0;
   padding: 0;
   border: none;
@@ -53,15 +54,15 @@ label {
 .hint {
   display: block;
   margin-bottom: $tiny-spacing;
-  font-size: rem(14);
+  font-size: 0.875rem;
   color: $body-text-color;
 }
 
-[type='text'],
-[type='number'],
-[type='tel'],
-[type='email'],
-[type='password'] {
+input[type='text'],
+input[type='number'],
+input[type='tel'],
+input[type='email'],
+input[type='password'] {
   @extend %base-input;
 }
 

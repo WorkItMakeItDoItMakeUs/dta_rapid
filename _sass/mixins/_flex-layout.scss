@@ -1,0 +1,14 @@
+@mixin flex-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header[role='banner'],
+  footer[role='contentinfo'] {
+    flex: none;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+}

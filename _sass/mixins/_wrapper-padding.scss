@@ -1,0 +1,11 @@
+@mixin wrapper-padding {
+  @include pad(0 $gutter);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  @include media($desktop) {
+    width: 100%;
+    min-width: $max-width;
+  }
+}

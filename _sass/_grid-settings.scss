@@ -17,20 +17,131 @@ $tablet:      new-breakpoint(min-width $tablet-minwidth, $tablet-grid-columns);
 $tablet-only: new-breakpoint(min-width $tablet-minwidth max-width $desktop-minwidth - 1, $tablet-grid-columns);
 $desktop:     new-breakpoint(min-width $max-width, $desktop-grid-columns);
 
-
-@mixin omega-reset($nth) {
-  $nth-plus-one: '#{$nth}+1';
-
-  &:nth-child(#{$nth}) {
-    margin-right: flex-gutter($content-grid-columns);
-  }
-
-  &:nth-child(#{$nth-plus-one}) {
-    clear: none;
-  }
-}
-
 $visual-grid: false;
 
 $border-box-sizing: true;
 $disable-warnings: true;
+
+.wrapper {
+  @include wrapper-padding;
+  @include outer-container;
+}
+
+html {
+}
+
+body {
+  @include flex-layout;
+}
+
+main {
+  @include wrapper-padding;
+  @include outer-container;
+
+  padding-top: $base-spacing * 2;
+
+  .form-wrapper {
+    @include fill-parent;
+
+    @include media($tablet) {
+      @include span-columns(4 of 6);
+    }
+  }
+
+  @include direction-context(right-to-left) {
+    .sidebar {
+      @include fill-parent;
+
+      @include media($tablet) {
+        @include span-columns(4 of 12);
+      }
+
+      @include media($desktop) {
+        @include span-columns(4 of 16);
+      }
+    }
+
+    .content-main {
+      @include fill-parent;
+
+      @include media($tablet) {
+        @include span-columns(8 of 12);
+      }
+
+      @include media($desktop) {
+        @include span-columns(12 of 16);
+      }
+
+      &:first-child {
+        @include reset-layout-direction;
+        @include fill-parent;
+        @include shift(0);
+
+        @include media($tablet) {
+          @include span-columns(8 of 12);
+          @include shift(0);
+        }
+
+        @include media($desktop) {
+          @include span-columns(10 of 16);
+          @include shift(0);
+        }
+      }
+    }
+  }
+
+  &.sidebar-has-controls {
+    @include reset-layout-direction;
+
+    .sidebar {
+      @include fill-parent;
+
+      @include media($tablet) {
+        @include span-columns(4 of 12);
+
+        margin-left: 0;
+      }
+
+      @include media($desktop) {
+        @include span-columns(4 of 16);
+      }
+    }
+
+    .content-main {
+      @include fill-parent;
+
+      @include media($tablet) {
+        @include span-columns(8 of 12);
+      }
+
+      @include media($desktop) {
+        @include span-columns(9 of 16);
+        @include shift(1);
+      }
+    }
+  }
+}
+
+
+/*
+Header & footer
+
+Style guide: Grid.7 Header & footer
+*/
+
+header {
+  &[role='banner'] {
+    @include outer-container(100%);
+    min-width: 100%;
+  }
+}
+
+footer {
+  &[role='contentinfo'] {
+    @include outer-container(100%);
+    @include pad(0 default);
+
+    margin-top: ($base-spacing * 2);
+    min-width: 100%;
+  }
+}
