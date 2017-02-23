@@ -15,6 +15,7 @@ input[type="reset"] {
   border-color: inherit;
   outline: 0;
   text-decoration: none;
+  text-align: center;
   font-weight: $bold-font-weight;
 
   @include media($tablet) {
@@ -28,6 +29,7 @@ input[type="reset"] {
     &:hover,
     &:active,
     &:focus {
+      pointer-events: none;
       cursor: not-allowed;
       border-color: $button-bg-color--disabled;
       background-color: $button-bg-color--disabled;
@@ -55,5 +57,16 @@ input[type="reset"] {
   &:disabled {
     background: $button-bg-color--disabled;
     border-color: $button-bg-color--disabled;
+  }
+}
+
+.button--full-width-on-mobile {
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  @include media($desktop) {
+    display: inline-block;
+    width: auto;
   }
 }

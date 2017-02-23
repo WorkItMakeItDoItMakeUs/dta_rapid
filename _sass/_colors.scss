@@ -31,12 +31,12 @@ $light-blue:      #e8f5fa;
 
 // Seperation of Pretty colors from contextual colors
 
-$action-color:              $aqua;
+$action-color:              $straya-green;
 $action-color--hover:       darken($action-color, 5%);
 $action-color--active:      darken($action-color, 10%);
-$action-color--disabled:    lighten($action-color, 30%);
+$action-color--disabled:    $light-grey;
 
-$focus-color:               lighten($action-color, 30%);
+$focus-color:               lighten($aqua, 30%);
 $error-color:               $red;
 $success-color:             $green;
 $warning-color:             $yellow;
