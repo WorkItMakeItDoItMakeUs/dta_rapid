@@ -1,0 +1,17 @@
+{% assign options = include.options | split: "|" %}
+{% assign question_slug = include.question | slugify %}
+
+<fieldset>
+  <legend id="q-{{ question_slug }}">{{ include.question }}</legend>
+  {% for option in options %}
+    {% assign option_slug = option | slugify %}
+    <label for="{{ option_slug }}">
+    <input
+      name="{{ question_slug }}"
+      type="radio"
+      id="{{ option_slug }}"
+      value="{{ option_slug }}"
+      aria-describedby="q-{{ question_slug}}">
+    &nbsp;{{ option }}</label>
+  {% endfor %}
+</fieldset>
