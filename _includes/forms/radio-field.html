@@ -1,17 +1,20 @@
 {% assign options = include.options | split: "|" %}
 {% assign question_slug = include.question | slugify %}
 
-<fieldset>
+<fieldset id="parent__{{ question_slug }}">
   <legend id="q-{{ question_slug }}">{{ include.question }}</legend>
   {% for option in options %}
     {% assign option_slug = option | slugify %}
     <label for="{{ option_slug }}">
     <input
+      {% if include.required %}required{% endif %}
       name="{{ question_slug }}"
       type="radio"
       id="{{ option_slug }}"
       value="{{ option_slug }}"
-      aria-describedby="q-{{ question_slug}}">
+      aria-describedby="q-{{ question_slug}}"
+      data-parsley-errors-container="#parent__{{ question_slug }}"
+      data-parsley-error-message="{{ include.validation_message }}">
     &nbsp;{{ option }}</label>
   {% endfor %}
 </fieldset>
