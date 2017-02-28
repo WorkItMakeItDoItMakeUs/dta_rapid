@@ -12,6 +12,8 @@
 @import "colors";
 @import "typography";
 
+@import "validation";
+
 @import "forms";
 @import "components/text-field";
 @import "components/button";
@@ -19,3 +21,8 @@
 @import "components/callout";
 
 @import "print";
+
+// Global class for hidden elements controlled by js
+.js-hidden {
+  display: none;
+}
