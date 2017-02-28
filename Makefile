@@ -1,0 +1,3 @@
+test:
+	yarn run lint
+
