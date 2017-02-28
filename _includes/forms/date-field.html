@@ -1,0 +1,12 @@
+<!-- TODO: good date fields -->
+
+<div class="text-field">
+  <label class="text-field__label" for="{{ include.id }}">{{ include.label }}</label>
+  <input
+     type="date"
+     id="{{ include.id }}"
+     name="{{ include.id }}"
+     {% if include.required %}data-parsley-required{% endif %}
+     {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
+     >
+</div>

@@ -7,7 +7,7 @@
     {% assign option_slug = option | slugify %}
     <label for="{{ option_slug }}">
     <input
-      {% if include.required %}required{% endif %}
+      {% if include.required %}data-parsley-required{% endif %}
       name="{{ question_slug }}"
       type="radio"
       id="{{ option_slug }}"

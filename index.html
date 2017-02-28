@@ -13,7 +13,9 @@
 
 {% include forms/error-container.html text="Help text for when something goes wrong" %}
 
-{% include forms/text-field.html id="styleguide_text" label="Text input" required=true %}
+{% include forms/text-field.html id="text-field" label="Text input" required=true %}
+
+{% include forms/date-field.html id="date-field" label="Pick a date" required=true %}
 
 {% include forms/submit-button.html %}
 
