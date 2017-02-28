@@ -6,7 +6,7 @@ dependencies:
 test:
   pre:
     - npm run lint
-    - make check-todos
+    - make check-code
   override: 
     - echo 'testing...'
         

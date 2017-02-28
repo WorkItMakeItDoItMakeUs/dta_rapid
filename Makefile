@@ -1,6 +1,6 @@
 test: check-todos
 	yarn run lint
 
-check-todos:
+check-code:
 	@./_build_scripts/code_check.sh
 
