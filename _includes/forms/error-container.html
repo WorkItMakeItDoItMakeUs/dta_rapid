@@ -2,7 +2,7 @@
 // Switches error container on and off
 document.addEventListener('DOMContentLoaded', function () {
   $('#form').parsley().on('field:validated', function () {
-    var ok = $('.parsley-error').length === 0;
+    var ok = $('.invalid').length === 0;
     $('#error-container').toggleClass('js-hidden', ok);
   });
 });

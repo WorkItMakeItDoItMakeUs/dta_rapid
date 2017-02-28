@@ -7,11 +7,17 @@
 
 {% include typography/callout.html text="This is a callout." %}
 
-(Hidden error container below)
+<form id="form" data-parsley-validate="" data-parsley-error-class="invalid">
+
+(Hidden error container below - hit submit button to show)
 
 {% include forms/error-container.html text="Help text for when something goes wrong" %}
 
 {% include forms/text-field.html id="styleguide_text" label="Text input" required=true %}
+
+{% include forms/submit-button.html %}
+
+</form>
 
 {% include buttons/start-button.html href="#" %}
 

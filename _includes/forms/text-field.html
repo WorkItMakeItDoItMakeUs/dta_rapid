@@ -17,5 +17,7 @@
     value="{{ include.value | default: "" }}"
     name="{{ include.name | default: name }}"
     {{ required }}
+    {% if include.pattern %}data-parsley-pattern="{{ include.pattern }}"{% endif %}
+    {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
   />
 </div>

@@ -16,10 +16,13 @@
   }
 
   &:not([value=""]) {
-    &:invalid,
-    &.invalid {
+    &:invalid {
       outline: 2px solid $error-color;
     }
+  }
+
+  &.invalid {
+      outline: 2px solid $error-color;
   }
 
   &:disabled,
