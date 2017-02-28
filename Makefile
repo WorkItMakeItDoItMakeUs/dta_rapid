@@ -1,4 +1,4 @@
-test: check-todos
+test: check-code
 	yarn run lint
 
 check-code:
