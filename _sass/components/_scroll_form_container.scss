@@ -1,0 +1,24 @@
+@mixin vertical-align-hack {
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+.scroll-form__root {
+  overflow: hidden;
+  height: 24rem;
+}
+
+.scroll-form__form-element {
+  opacity: 0.1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.scroll-form__spacer {
+  height: 24rem;
+}
+
+.scroll-form__form-element--focused {
+  opacity: 1;
+}
