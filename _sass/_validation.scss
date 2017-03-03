@@ -1,5 +1,8 @@
 // Global level Parsley stuff
 
-.parsley-custom-error-message {
+.parsley-errors-list {
   color: $error-color;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
