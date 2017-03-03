@@ -4,15 +4,22 @@
   border-radius: $tiny-border-radius;
   box-shadow: 0 0 8px $light-grey;
   padding-left: $base-spacing - $tiny-spacing;
+}
+
+.callout__root--default {
+  border-left-color: $default-color;
   border-left-width: $tiny-spacing;
   border-left-style: solid;
-  border-left-color: $dark-grey;
 }
 
 .callout__root--info {
   border-left-color: $info-color;
+  border-left-width: $tiny-spacing;
+  border-left-style: solid;
 }
 
 .callout__root--error {
   border-left-color: $error-color;
+  border-left-width: $tiny-spacing;
+  border-left-style: solid;
 }
