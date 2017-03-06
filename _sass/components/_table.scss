@@ -5,6 +5,7 @@ table {
   margin: $base-spacing 0;
   width: 100%;
   border: 1px $border-color solid;
+  -webkit-overflow-scrolling: touch;
 
   @include media($tablet) {
     display: table;

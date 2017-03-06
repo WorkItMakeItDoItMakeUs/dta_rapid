@@ -9,9 +9,6 @@
 }
 
 .multiple-choice__label {
-  transition:
-    background-color 80ms linear,
-    color 50ms linear;
   padding: $small-spacing $base-spacing $small-spacing $large-spacing;
   padding-left: $large-spacing;
   display: block;

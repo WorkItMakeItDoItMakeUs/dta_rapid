@@ -13,7 +13,7 @@
           class="multiple-choice__input"
           id="{{ question_slug }}__{{ option_slug }}"
           name="{{ question_slug }}"
-          type="{{ inlcude.type | default: 'radio' }}"
+          type="{{ include.type | default: 'radio' }}"
           data-parsley-errors-container="#parent__{{ question_slug }}"
           data-parsley-error-message="{{ include.validation_message }}"
           value="{{ question_slug }}__{{ option_slug }}">
