@@ -1,0 +1,36 @@
+.multiple-choice__root {
+  list-style: none;
+  padding-left: 0;
+}
+
+.multiple-choice__option {
+  position: relative;
+  margin: $small-spacing 0;
+}
+
+.multiple-choice__label {
+  padding: $small-spacing $base-spacing $small-spacing $large-spacing;
+  padding-left: $large-spacing;
+  display: block;
+  width: auto;
+  background: $action-color--inactive;
+  border: 1px solid $border-color;
+  cursor: pointer;
+  margin: 0;
+
+  &:hover {
+    border-color: $action-color--hover;
+  }
+}
+
+.multiple-choice__input {
+  @include transform(translateY(-50%));
+  margin-left: $small-spacing * 1.5;
+  position: absolute;
+  top: 50%;
+
+  &:checked + .multiple-choice__label{
+    border-color: $action-color--hover;
+    color: $action-color--hover;
+  }
+}

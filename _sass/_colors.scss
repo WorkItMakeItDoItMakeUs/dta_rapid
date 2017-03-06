@@ -35,6 +35,7 @@ $action-color:              $straya-green;
 $action-color--hover:       darken($action-color, 5%);
 $action-color--active:      darken($action-color, 10%);
 $action-color--disabled:    $light-grey;
+$action-color--inactive:    $lighter-grey;
 
 $focus-color:               lighten($aqua, 30%);
 $error-color:               $red;

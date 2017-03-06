@@ -41,6 +41,9 @@ fieldset {
 
 legend {
   margin-bottom: $small-spacing;
+  display: block;
+  width: 100%;
+  float: none;
 }
 
 label {

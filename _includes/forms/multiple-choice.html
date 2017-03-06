@@ -1,0 +1,26 @@
+{% assign options = include.options | split: "|" %}
+{% assign question_slug = include.question | slugify %}
+
+<fieldset>
+  <legend id="q-{{ question_slug }}">{{ include.question }}</legend>
+  <ul class="multiple-choice__root">
+    {% for option in options %}
+      {% assign option_slug = option | slugify %}
+      <li class="multiple-choice__option">
+        <input
+          {% if include.required %}data-parsley-required{% endif %}
+          aria-describedby="q-{{ question_slug}}"
+          class="multiple-choice__input"
+          id="{{ question_slug }}__{{ option_slug }}"
+          name="{{ question_slug }}"
+          type="{{ inlcude.type | default: 'radio' }}"
+          data-parsley-errors-container="#parent__{{ question_slug }}"
+          data-parsley-error-message="{{ include.validation_message }}"
+          value="{{ question_slug }}__{{ option_slug }}">
+        <label
+          class="multiple-choice__label"
+          for="{{ question_slug }}__{{ option_slug }}">{{ option }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+</fieldset>
