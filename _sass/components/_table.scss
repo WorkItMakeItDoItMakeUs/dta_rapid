@@ -1,0 +1,39 @@
+table {
+  text-align: left;
+  display: block;
+  overflow-x: auto;
+  margin: $base-spacing 0;
+  width: 100%;
+  border: 1px $border-color solid;
+
+  @include media($tablet) {
+    display: table;
+    border: none;
+    table-layout: fixed;
+  }
+}
+
+thead,
+tbody,
+tfoot {
+}
+
+thead,
+tfoot {
+  tr {
+    background-color: $action-color--inactive;
+  }
+}
+
+tfoot tr {
+  border-bottom: none;
+}
+
+tr {
+  border-bottom: 1px $border-color solid;
+}
+
+td,
+th {
+  padding: $small-spacing;
+}
