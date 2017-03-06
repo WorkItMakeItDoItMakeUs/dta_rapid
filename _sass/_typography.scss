@@ -98,3 +98,19 @@ kbd {
 strong, b {
   font-weight: $bold-font-weight;
 }
+
+a {
+  cursor: pointer;
+  color: $body-text-color;
+  text-decoration: none;
+  border-bottom: 1px solid $link-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-property: background-color, border-color, color;
+
+  &:focus,
+  &:hover {
+    background-color: $link-color;
+  }
+
+}
