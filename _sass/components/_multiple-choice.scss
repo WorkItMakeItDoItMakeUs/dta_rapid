@@ -9,9 +9,13 @@
 }
 
 .multiple-choice__label {
+  transition:
+    background-color 80ms linear,
+    color 50ms linear;
   padding: $small-spacing $base-spacing $small-spacing $large-spacing;
   padding-left: $large-spacing;
   display: block;
+  border-radius: 2px;
   width: auto;
   background: $action-color--inactive;
   border: 1px solid $border-color;
@@ -19,7 +23,7 @@
   margin: 0;
 
   &:hover {
-    border-color: $action-color--hover;
+    border-color: $border-highlight-color;
   }
 }
 
@@ -29,8 +33,16 @@
   position: absolute;
   top: 50%;
 
-  &:checked + .multiple-choice__label{
-    border-color: $action-color--hover;
-    color: $action-color--hover;
+  &:focus + .multiple-choice__label {
+    border-color: $border-highlight-color;
+  }
+  &:checked + .multiple-choice__label {
+    background-color: $button-bg-color;
+    border-color: $button-bg-color--hover;
+    color: $button-text-color;
+
+    &:hover {
+      border-color: $button-bg-color--active;
+    }
   }
 }
