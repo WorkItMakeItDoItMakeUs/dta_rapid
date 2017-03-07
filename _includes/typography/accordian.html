@@ -1,19 +1,12 @@
+{% if include.open == true %}
+  {% assign open="open" %}
+{% else %}
+  {% assign open=null %}
+{% endif %}
+
 <section class="accordion">
-  <details class="accordion__details" open data-label="content-accordion-1" aria-expanded="true">
-    <summary class="accordion__summary">1. Understand user needs</summary>
-    <div class="accordion__content">
-      <p>Understand user needs. Research to develop a deep knowledge of the users
-        and their context for the service.
-      </p>
-    </div>
-  </details>
-  <details class="accordion__details" data-label="content-accordion-2" aria-expanded="false">
-    <summary class="accordion__summary">2. Have a multi-disciplinary team</summary>
-    <div class="accordion__content">
-      <p>Establish a sustainable multi-disciplinary team to design, build,
-        operate and iterate the service, led by an experienced product manager
-        with decision-making responsibility.
-      </p>
-    </div>
+  <details class="accordion__details" data-label="content-accordion-{{ include.summary | slugify }}" aria-expanded="{{ include.open | false }}" {{ open }}>
+    <summary class="accordion__summary">{{ include.summary }}</summary>
+    <div class="accordion__content">{{ include.content }}</div>
   </details>
 </section>

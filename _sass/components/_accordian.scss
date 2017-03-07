@@ -1,6 +1,11 @@
 .accordion {
-  margin: $base-spacing 0;
+  margin: $base-spacing 0 0;
   border: 1px solid $base-border-color;
+
+  + .accordion {
+    margin: 0 0 $base-spacing 0;
+    border-top: none;
+  }
 }
 
 .accordion__summary {
@@ -32,6 +37,10 @@
 .accordion__details {
   + .accordion__details {
     border-top: 1px solid $base-border-color;
+  }
+
+  table {
+    margin: 0;
   }
 
   &[open] {
