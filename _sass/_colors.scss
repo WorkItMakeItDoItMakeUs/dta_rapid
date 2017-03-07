@@ -47,6 +47,8 @@ $default-color:             $dark-grey;
 $body-text-color:           $dark-grey;
 $body-text-color--inverted:  white;
 
+$base-border-color:         $light-grey;
+
 $link-color:                lighten($action-color, 10%);
 
 $button-bg-color:             $action-color;
@@ -64,6 +66,7 @@ $border-color:              $light-grey;
 $border-highlight-color:    $grey;
 $background-color:          white;
 $background-color--inverted: $dark-grey;
+$background-secondary-color: $lighter-grey;
 
 // Badge colors - see _sass/components/_badge.scss
 
