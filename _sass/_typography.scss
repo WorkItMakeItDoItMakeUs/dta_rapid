@@ -41,10 +41,6 @@ h1 {
   }
 }
 
-@mixin h2 {
-
-}
-
 h2 {
   font-size: 2rem;
   line-height: $small-leading;
@@ -107,10 +103,10 @@ a {
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
+  padding: 0 0.125em;
 
   &:focus,
   &:hover {
     background-color: $link-color;
   }
-
 }

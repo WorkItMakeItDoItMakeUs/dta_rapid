@@ -34,7 +34,8 @@
       content: "\00203A";
       text-align: center;
       color:  $border-color;
-      padding: 0 $medium-spacing;
+      padding: 0 $small-spacing;
+      font-size: $large-font-size;
       line-height: 1;
     }
   }
