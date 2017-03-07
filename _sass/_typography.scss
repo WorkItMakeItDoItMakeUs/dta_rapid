@@ -21,6 +21,12 @@ h4 {
   font-weight: $base-font-weight;
   margin-bottom: $tiny-spacing;
   margin-top: $base-spacing;
+
+  small {
+    font-size: $smaller-font-size;
+    line-height: $small-leading;
+    display: block;
+  }
 }
 
 h1 {

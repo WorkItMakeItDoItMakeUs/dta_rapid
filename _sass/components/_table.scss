@@ -1,40 +1,25 @@
 table {
-  text-align: left;
-  display: block;
-  overflow-x: auto;
-  margin: $base-spacing 0;
+  border-collapse: collapse;
+  margin-bottom: $base-spacing;
   width: 100%;
-  border: 1px $border-color solid;
-  -webkit-overflow-scrolling: touch;
-
-  @include media($tablet) {
-    display: table;
-    border: none;
-    table-layout: fixed;
-  }
 }
 
-thead,
-tbody,
-tfoot {
-}
-
-thead,
-tfoot {
-  tr {
-    background-color: $action-color--inactive;
-  }
-}
-
-tfoot tr {
-  border-bottom: none;
-}
-
-tr {
-  border-bottom: 1px $border-color solid;
+tr:nth-child(even) {
+  background-color: $lighter-grey;
 }
 
 td,
 th {
-  padding: $small-spacing;
+  border-bottom: solid 1px $light-grey;
+  padding: $tiny-spacing;
+  text-align: left;
+
+  @include media($tablet) {
+    padding: $small-spacing;
+    font-size: initial;
+  }
+}
+
+thead {
+  border-bottom: solid 2px $grey;
 }
