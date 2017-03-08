@@ -1,4 +1,11 @@
 ---
+breadcrumbs:
+  - title: 'Page 1'
+    href: '#page1'
+  - title: 'Page 2'
+    href: '#page2'
+  - title: 'Page 3'
+    href: '#page3'
 ---
 
 # Examples
@@ -33,7 +40,7 @@
 
 {% include forms/multiple-choice.html options="Yes|Absolutely|100%" type="checkbox" question="Do you like checking boxes?" %}
 
-{% include navigation/breadcrumbs.html %}
+{% include navigation/breadcrumbs.html breadcrumbs=page.breadcrumbs %}
 
 {% include typography/accordian.html open=true summary="Accordian Titles" content="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet est et massa dignissim blandit tincidunt a mauris. Vestibulum porta nec orci in pretium. Integer quis nunc in ipsum tempor rhoncus. Aenean vitae orci eget enim pharetra faucibus.</p><p>In hac habitasse platea dictumst. Integer non laoreet magna, in eleifend quam. Sed ornare laoreet mauris, a interdum libero aliquam sit amet. Nullam sollicitudin lacus sed pulvinar tincidunt. Quisque pharetra eu ante dignissim auctor. Sed sed fermentum tortor. Duis condimentum finibus est ultrices rutrum. Nunc in massa id dui varius malesuada. Sed a velit scelerisque, aliquet velit in, volutpat nibh.</p>" %}
 
