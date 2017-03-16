@@ -2,7 +2,7 @@ var scrollForm = (function () {
   var scroller,
       questionsets = document.getElementsByClassName('scroll-form__questionset'),
       currentPosition = 0,
-      speed = 500,
+      speed = 400,
       offset = 0;
 
   var init = function () {

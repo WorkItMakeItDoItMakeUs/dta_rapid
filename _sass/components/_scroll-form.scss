@@ -4,7 +4,7 @@
 }
 
 .scroll-form__questionset {
-  transition: opacity 500ms 250ms ease-in-out;
+  transition: opacity 300ms 100ms $ease-in-out-quad;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .scroll-form__questionset--active {
-  transition: opacity 500ms 250ms ease-in-out;
+  transition: opacity 300ms 100ms $ease-in-out-quad;
   opacity: 1;
 }
 
