@@ -10,33 +10,13 @@
   </head>
 
   <body>
-    <main class="scroll-form__form-container">
+    <main id="container" class="scroll-form__container">
       <div class="wrapper">{{ content }}</div>
     </main>
     <script src="/assets/js/vendor/jquery-3.1.1.min.js"></script>
     <script src="/assets/js/vendor/parsley.min.js"></script>
     <script src="/assets/js/vendor/zenscroll-min.js"></script>
-
-    <script type="text/javascript">
-      var scroll = scroll || {}
-
-      $(function () {
-        var container = $('#container').get(0);
-        var speed = 500;
-        var offset = 30;
-        var scroller = zenscroll.createScroller(container, speed, offset);
-
-        scroll.next = function (me) {
-          var nextElement = $(me).closest('.scroll-form__questionset').next('.scroll-form__questionset');
-          scroller.center(nextElement.get(0), speed, offset, nextElement.toggleClass('scroll-form__questionset--focused', true));
-        };
-
-        var formElements = $('.scroll-form__questionset');
-        scroller.center(formElements.get(0), speed, offset, function () {
-          $(formElements.get(0)).toggleClass('scroll-form__questionset--focused', true);
-        });
-      })
-    </script>
+    <script src="/assets/js/scroll-form.js"></script>
   </body>
 
 </html>
