@@ -1,42 +1,41 @@
 var scrollForm = (function () {
-  var scroller,
-      questionsets = document.getElementsByClassName('scroll-form__questionset'),
+
+  // TODO: CAN HAZ TESTS?
+
+  // TODO: next() set ceiling
+  // TODO: prev() set floor
+  // TODO  index() = function () {}
+  // TODO: setActiveQuestion = function () {}
+  // TODO: Can haz ES6?
+
+  var callback = function () { /* no op */ },
+      scroller,
       currentPosition = 0,
-      speed = 400,
-      offset = 0;
+      speed = 400;
 
   var init = function () {
-    var container = document.getElementById('container');
+    var container = questions.getContainer();
+    var firstQuestion = questions.getQuestion(0);
 
-    scroller = zenscroll.createScroller(container, speed, offset);
+    scroller = scrolling.createScroller(container, 0, 0)
 
-    var target = questionsets[currentPosition];
-
-    scroller.center(target, 0, offset, function () {
-      target.classList.add('scroll-form__questionset--active');
-    });
+    scrolling.scrollTo(scroller, firstQuestion, speed, callback);
   }
 
   var next = function () {
     var nextPosition = currentPosition + 1;
-    var target = questionsets[nextPosition];
+    var target = questions.getQuestion(nextPosition);
 
-    scroller.center(target, speed, offset, function () {
-      questionsets[currentPosition].classList.remove('scroll-form__questionset--active');
-      target.classList.add('scroll-form__questionset--active');
-    })
+    scrolling.scrollTo(scroller, target, speed, callback)
 
     currentPosition += 1;
   }
 
   var prev = function () {
     var prevPosition = currentPosition - 1;
-    var target = questionsets[prevPosition];
+    var target = questions.getQuestion(prevPosition);
 
-    scroller.center(target, speed, offset, function () {
-      questionsets[currentPosition].classList.remove('scroll-form__questionset--active');
-      target.classList.add('scroll-form__questionset--active');
-    })
+    scrolling.scrollTo(scroller, target, speed, callback)
 
     currentPosition -= 1;
   }

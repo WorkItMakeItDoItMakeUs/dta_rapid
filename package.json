@@ -3,9 +3,13 @@
   "repository": "git@github.com:gtrogers/dta_rapid.git",
   "author": "@WorkItMakeItDoItMakeUs",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "./node_modules/.bin/mocha ./**/*.test.js"
   },
-  "dependencies": {
-    "eslint": "^3.16.0"
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.16.0",
+    "mocha": "^3.2.0",
+    "zenscroll": "^3.3.0"
   }
 }

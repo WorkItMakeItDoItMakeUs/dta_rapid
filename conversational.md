@@ -24,7 +24,7 @@ layout: conversational
 
 <footer class="scroll-form__footer">
   <div class="wrapper">
-    {% include buttons/link-button.html onclick="scrollForm.next()" text="Next" %}
+    {% include buttons/link-button.html onclick="scrollForm.next(); return false;" text="Next" %}
   </div>
 </footer>
 
