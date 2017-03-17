@@ -1,14 +1,10 @@
 var scrollForm = (function () {
 
   // TODO: CAN HAZ TESTS?
-
-  // TODO: next() set ceiling
-  // TODO: prev() set floor
   // TODO  index() = function () {}
-  // TODO: setActiveQuestion = function () {}
   // TODO: Can haz ES6?
 
-  var callback = function () { /* no op */ },
+  var callback = function () { },
       scroller,
       currentPosition = 0,
       speed = 400;
@@ -19,25 +15,37 @@ var scrollForm = (function () {
 
     scroller = scrolling.createScroller(container, 0, 0)
 
-    scrolling.scrollTo(scroller, firstQuestion, speed, callback);
+    scrolling.scrollTo(scroller, firstQuestion, speed, function() {
+      questions.setActiveQuestion(firstQuestion);
+    });
   }
 
   var next = function () {
     var nextPosition = currentPosition + 1;
-    var target = questions.getQuestion(nextPosition);
+    var currentTarget = questions.getQuestion(currentPosition);
+    var newTarget = questions.getQuestion(nextPosition);
 
-    scrolling.scrollTo(scroller, target, speed, callback)
+    if (newTarget) {
+      scrolling.scrollTo(scroller, newTarget, speed, function() {
+        questions.setActiveQuestion(newTarget);
+      });
 
-    currentPosition += 1;
+      currentPosition += 1;
+    }
   }
 
   var prev = function () {
     var prevPosition = currentPosition - 1;
-    var target = questions.getQuestion(prevPosition);
+    var newTarget = questions.getQuestion(prevPosition);
+    var currentTarget = questions.getQuestion(currentTarget);
 
-    scrolling.scrollTo(scroller, target, speed, callback)
+    if (newTarget) {
+      scrolling.scrollTo(scroller, target, speed, function() {
+        questions.setActiveQuestion(newTarget);
+      });
 
-    currentPosition -= 1;
+      currentPosition -= 1;
+    }
   }
 
   return {
