@@ -28,3 +28,14 @@
   left: 0;
   right: 0;
 }
+
+.scroll-form__text-field,
+.scroll-form__multiple-choice {
+  .text-field__label,
+  .multiple-choice__label {
+    font-size: $large-font-size;
+  }
+  .text-field__hint {
+
+  }
+}

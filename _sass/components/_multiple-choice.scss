@@ -1,4 +1,8 @@
-.multiple-choice__root {
+.multiple-choice {
+  
+}
+
+.multiple-choice__list {
   list-style: none;
   padding-left: 0;
 }
@@ -8,7 +12,7 @@
   margin: $small-spacing 0;
 }
 
-.multiple-choice__label {
+.multiple-choice__option-label {
   padding: $small-spacing $base-spacing $small-spacing $large-spacing;
   padding-left: $large-spacing;
   display: block;
@@ -30,10 +34,10 @@
   position: absolute;
   top: 50%;
 
-  &:focus + .multiple-choice__label {
+  &:focus + .multiple-choice__option-label {
     border-color: $border-highlight-color;
   }
-  &:checked + .multiple-choice__label {
+  &:checked + .multiple-choice__option-label {
     background-color: $button-bg-color;
     border-color: $button-bg-color--hover;
     color: $button-text-color;

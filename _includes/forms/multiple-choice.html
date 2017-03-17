@@ -1,9 +1,12 @@
 {% assign options = include.options | split: "|" %}
 {% assign question_slug = include.question | slugify %}
 
-<fieldset>
-  <legend id="q-{{ question_slug }}">{{ include.question }}</legend>
-  <ul class="multiple-choice__root">
+<div class="multiple-choice {{ include.className}}">
+  <label class="multiple-choice__label" id="q-{{ question_slug }}">{{ include.question }}</label>
+  {% if include.hint %}
+    <label class="multiple-choice__hint">{{ include.hint }}</label>
+  {% endif %}
+  <ul class="multiple-choice__list">
     {% for option in options %}
       {% assign option_slug = option | slugify %}
       <li class="multiple-choice__option">
@@ -18,9 +21,12 @@
           data-parsley-error-message="{{ include.validation_message }}"
           value="{{ question_slug }}__{{ option_slug }}">
         <label
-          class="multiple-choice__label"
+          class="multiple-choice__option-label"
           for="{{ question_slug }}__{{ option_slug }}">{{ option }}</label>
       </li>
     {% endfor %}
   </ul>
-</fieldset>
+  {% if include.description %}
+    <p class="multiple-choice__description">{{ include.description }}</p>
+  {% endif %}
+</div>

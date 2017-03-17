@@ -5,10 +5,13 @@
   {% assign required="required" %}
 {% endif %}
 
-<div class="text-field">
+<div class="text-field {{ include.className | default: null }}">
   <label class="text-field__label" for="{{ include.id | default: id }}">
     {{ include.label }}
   </label>
+  {% if include.hint %}
+    <label class="text-field__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
+  {% endif %}
   <input
     class="text-field__input"
     placeholder="{{ include.placeholder }}"
@@ -20,4 +23,7 @@
     {% if include.pattern %}data-parsley-pattern="{{ include.pattern }}"{% endif %}
     {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
   />
+  {% if include.description %}
+    <p class="text-field__description">{{ include.description }}</p>
+  {% endif %}
 </div>

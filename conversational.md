@@ -6,19 +6,19 @@ layout: conversational
 
 <div class="scroll-form__questionset">
   <section class="scroll-form__question">
-    {% include forms/text-field.html label="Question 1" %}
+    {% include forms/text-field.html label="Question 1" className="scroll-form__text-field" %}
   </section>
 </div>
 
 <div class="scroll-form__questionset">
   <section class="scroll-form__question">
-    {% include forms/text-field.html label="Question 2" %}
+    {% include forms/text-field.html label="Question 2" className="scroll-form__text-field" %}
   </section>
 </div>
 
 <div class="scroll-form__questionset">
   <section class="scroll-form__question">
-    {% include forms/text-field.html label="Question 3" %}
+    {% include forms/multiple-choice.html options="Yes|No|Maybe" question="Do you like pies?" className="scroll-form__multiple-choice" %}
   </section>
 </div>
 
