@@ -1,6 +1,8 @@
+'use strict'; 
+
 const zenscroll = require('zenscroll');
 
-let scrolling = () => {
+const scrolling = () => {
 
   let createScroller = (container, speed, offset) => {
     return zenscroll.createScroller(container, speed, offset);

@@ -1,3 +1,5 @@
+'use strict'; 
+
 const questions = () => {
 
   const CONTAINER_ID = "container";

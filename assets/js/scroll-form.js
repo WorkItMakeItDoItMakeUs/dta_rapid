@@ -1,3 +1,5 @@
+'use strict';
+
 const scrolling = require('./scrolling');
 const questions = require('./questions');
 

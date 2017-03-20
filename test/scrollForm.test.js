@@ -1,3 +1,5 @@
+'use strict';
+
 const expect = require('chai').expect;
 const simple = require('simple-mock');
 const scrolling = require('../assets/js/scrolling');
