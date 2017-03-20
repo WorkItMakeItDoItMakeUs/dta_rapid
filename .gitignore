@@ -6,4 +6,3 @@ Gemfile.lock
 *.swp
 .DS_Store
 node_modules
-assets/js/bundle.js
