@@ -1,5 +1,6 @@
 test: check-code
 	yarn run lint
+	@./node_modules/.bin/mocha ./**/*.test.js
 
 check-code:
 	@./_build_scripts/code_check.sh

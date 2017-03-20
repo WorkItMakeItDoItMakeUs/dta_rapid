@@ -1,4 +1,8 @@
 {
-  "extends": "eslint:recommended"
+  "extends": "eslint:recommended",
+  "env": {
+    "mocha": true,
+    "browser": true,
+    "commonjs": true
+  }
 }
-

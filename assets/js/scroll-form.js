@@ -6,8 +6,7 @@ var scrollForm = function () {
   // TODO  index() = function () {}
   // TODO: Can haz ES6?
 
-  var callback = function () { },
-      scroller,
+  var scroller,
       currentPosition = 0,
       speed = 400;
 
@@ -24,7 +23,6 @@ var scrollForm = function () {
 
   var next = function () {
     var nextPosition = currentPosition + 1;
-    var currentTarget = questions.getQuestion(currentPosition);
     var newTarget = questions.getQuestion(nextPosition);
 
     if (newTarget) {
@@ -39,7 +37,6 @@ var scrollForm = function () {
   var prev = function () {
     var prevPosition = currentPosition - 1;
     var newTarget = questions.getQuestion(prevPosition);
-    var currentTarget = questions.getQuestion(currentTarget);
 
     if (newTarget) {
       scrolling.scrollTo(scroller, newTarget, speed, function() {

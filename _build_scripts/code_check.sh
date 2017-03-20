@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MAX="7"
+MAX="13"
 
 echo "============================="
 echo "Checking for TODOs and FIXMEs"
@@ -17,7 +17,7 @@ SUM=$(($TODOS + $FIXMES))
 
 if ((SUM > MAX)); then
   echo "Too many TODOs and FIXMEs ($SUM > $MAX)"
-  
+
   echo "TODOs"
   grep -irInH --exclude-dir="node_modules" --exclude-dir="*/vendor/*" --exclude-dir="_build_scripts" --exclude_dir="_sass" TODO .
   echo "FIXMEs"
@@ -29,4 +29,3 @@ if ((SUM > MAX)); then
 fi
 
 echo "All okay... ($SUM < $MAX)"
-
