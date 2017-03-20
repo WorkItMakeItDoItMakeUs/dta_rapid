@@ -4,9 +4,5 @@ dependencies:
     - npm install
 
 test:
-  pre:
-    - npm run lint
-    - make check-code
   override: 
-    - echo 'testing...'
-        
+    - make test
