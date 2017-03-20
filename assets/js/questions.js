@@ -1,4 +1,5 @@
-var questions = (function () {
+var questions = function () {
+
   var CONTAINER_ID = "container",
       CLASS_NAME = "scroll-form__questionset",
       ACTIVE_CLASS = "scroll-form__questionset--active";
@@ -8,14 +9,17 @@ var questions = (function () {
     getQuestion: function (index) {
       return document.getElementsByClassName(CLASS_NAME)[index];
     },
-    setActiveQuestion: function(target) {
+    setActiveQuestion: function(index) {
       var questionList = [].slice.call(document.getElementsByClassName(CLASS_NAME));
 
       questionList.forEach(function(elm) {
         elm.classList.remove(ACTIVE_CLASS);
       });
 
-      target.classList.add(ACTIVE_CLASS);
+      this.getQuestion(index).classList.add(ACTIVE_CLASS);
     }
-  }
-}());
+  };
+
+};
+
+module.exports = questions();

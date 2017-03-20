@@ -1,4 +1,6 @@
-var scrolling = (function () {
+var zenscroll = require('./vendor/zenscroll-min');
+
+var scrolling = function () {
 
   var createScroller = function (container, speed, offset) {
     return zenscroll.createScroller(container, speed, offset);
@@ -13,4 +15,6 @@ var scrolling = (function () {
     createScroller: createScroller
   };
 
-}());
+};
+
+module.exports = scrolling();

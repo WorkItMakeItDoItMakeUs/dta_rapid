@@ -1,6 +1,8 @@
-var scrollForm = (function () {
+var scrolling = require('./scrolling');
+var questions = require('./questions');
 
-  // TODO: CAN HAZ TESTS?
+var scrollForm = function () {
+
   // TODO  index() = function () {}
   // TODO: Can haz ES6?
 
@@ -16,9 +18,9 @@ var scrollForm = (function () {
     scroller = scrolling.createScroller(container, 0, 0)
 
     scrolling.scrollTo(scroller, firstQuestion, speed, function() {
-      questions.setActiveQuestion(firstQuestion);
+      questions.setActiveQuestion(0);
     });
-  }
+  };
 
   var next = function () {
     var nextPosition = currentPosition + 1;
@@ -27,12 +29,12 @@ var scrollForm = (function () {
 
     if (newTarget) {
       scrolling.scrollTo(scroller, newTarget, speed, function() {
-        questions.setActiveQuestion(newTarget);
+        questions.setActiveQuestion(nextPosition);
       });
 
       currentPosition += 1;
     }
-  }
+  };
 
   var prev = function () {
     var prevPosition = currentPosition - 1;
@@ -40,17 +42,20 @@ var scrollForm = (function () {
     var currentTarget = questions.getQuestion(currentTarget);
 
     if (newTarget) {
-      scrolling.scrollTo(scroller, target, speed, function() {
-        questions.setActiveQuestion(newTarget);
+      scrolling.scrollTo(scroller, newTarget, speed, function() {
+        questions.setActiveQuestion(prevPosition);
       });
 
       currentPosition -= 1;
     }
-  }
+  };
 
   return {
     init: init,
     next: next,
     prev: prev
-  }
-})();
+  };
+
+};
+
+module.exports = scrollForm();
