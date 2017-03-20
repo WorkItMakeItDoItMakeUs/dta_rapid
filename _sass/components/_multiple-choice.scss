@@ -1,5 +1,16 @@
 .multiple-choice {
-  
+
+}
+
+.multiple-choice__label {
+  font-size: $large-font-size;
+  font-weight: 600;
+  line-height: $base-heading-leading;
+}
+
+.multiple-choice__hint,
+.multiple-choice__description {
+  color: $body-text-color--secondary;
 }
 
 .multiple-choice__list {
