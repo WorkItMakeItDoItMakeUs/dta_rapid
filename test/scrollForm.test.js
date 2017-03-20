@@ -1,8 +1,8 @@
-var expect = require('chai').expect;
-var simple = require('simple-mock');
-var scrolling = require('../assets/js/scrolling');
-var questions = require('../assets/js/questions');
-var scrollForm = require('../assets/js/scroll-form');
+const expect = require('chai').expect;
+const simple = require('simple-mock');
+const scrolling = require('../assets/js/scrolling');
+const questions = require('../assets/js/questions');
+const scrollForm = require('../assets/js/scroll-form');
 
 describe('scrollForm', function () {
 

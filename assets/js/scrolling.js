@@ -1,4 +1,4 @@
-let zenscroll = require('zenscroll');
+const zenscroll = require('zenscroll');
 
 let scrolling = () => {
 
