@@ -1,4 +1,4 @@
-var zenscroll = require('./vendor/zenscroll-min');
+var zenscroll = require('zenscroll');
 
 var scrolling = function () {
 

@@ -13,5 +13,10 @@
     "mocha": "^3.2.0",
     "simple-mock": "^0.7.3",
     "zenscroll": "^3.3.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.0",
+    "parsley": "^0.1.0",
+    "zenscroll": "^3.3.0"
   }
 }
