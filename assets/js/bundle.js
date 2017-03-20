@@ -1,4 +1,6 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.technologic = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
 var scrollForm = require('./scroll-form');
 
 scrollForm.init();
@@ -6,78 +8,79 @@ scrollForm.init();
 module.exports = scrollForm;
 
 },{"./scroll-form":3}],2:[function(require,module,exports){
-var questions = function () {
+"use strict";
 
-  var CONTAINER_ID = "container",
-      CLASS_NAME = "scroll-form__questionset",
-      ACTIVE_CLASS = "scroll-form__questionset--active";
+var questions = function questions() {
+
+  var CONTAINER_ID = "container";
+  var CLASS_NAME = "scroll-form__questionset";
+  var ACTIVE_CLASS = "scroll-form__questionset--active";
 
   return {
-    getContainer: function () { return document.getElementById(CONTAINER_ID); },
-    getQuestion: function (index) {
+    getContainer: function getContainer() {
+      return document.getElementById(CONTAINER_ID);
+    },
+    getQuestion: function getQuestion(index) {
       return document.getElementsByClassName(CLASS_NAME)[index];
     },
-    setActiveQuestion: function(index) {
+    setActiveQuestion: function setActiveQuestion(index) {
       var questionList = [].slice.call(document.getElementsByClassName(CLASS_NAME));
-
-      questionList.forEach(function(elm) {
-        elm.classList.remove(ACTIVE_CLASS);
+      questionList.forEach(function (elm) {
+        return elm.classList.remove(ACTIVE_CLASS);
       });
-
       this.getQuestion(index).classList.add(ACTIVE_CLASS);
     }
   };
-
 };
 
 module.exports = questions();
 
 },{}],3:[function(require,module,exports){
+'use strict';
+
 var scrolling = require('./scrolling');
 var questions = require('./questions');
 
-var scrollForm = function () {
+var scrollForm = function scrollForm() {
 
   // TODO  index() = function () {}
-  // TODO: Can haz ES6?
 
-  var scroller,
-      currentPosition = 0,
-      speed = 400;
+  var scroller = void 0;
+  var currentPosition = 0;
 
-  var init = function () {
+  var speed = 400;
+
+  var init = function init() {
     var container = questions.getContainer();
     var firstQuestion = questions.getQuestion(0);
 
-    scroller = scrolling.createScroller(container, 0, 0)
+    scroller = scrolling.createScroller(container, 0, 0);
 
-    scrolling.scrollTo(scroller, firstQuestion, speed, function() {
-      questions.setActiveQuestion(0);
+    scrolling.scrollTo(scroller, firstQuestion, speed, function () {
+      return questions.setActiveQuestion(0);
     });
   };
 
-  var next = function () {
+  var next = function next() {
     var nextPosition = currentPosition + 1;
     var newTarget = questions.getQuestion(nextPosition);
 
     if (newTarget) {
-      scrolling.scrollTo(scroller, newTarget, speed, function() {
-        questions.setActiveQuestion(nextPosition);
+      scrolling.scrollTo(scroller, newTarget, speed, function () {
+        return questions.setActiveQuestion(nextPosition);
       });
-
       currentPosition += 1;
     }
   };
 
-  var prev = function () {
+  var prev = function prev() {
     var prevPosition = currentPosition - 1;
     var newTarget = questions.getQuestion(prevPosition);
 
     if (newTarget) {
-      scrolling.scrollTo(scroller, newTarget, speed, function() {
-        questions.setActiveQuestion(prevPosition);
+      scrolling.scrollTo(scroller, newTarget, speed, function () {
+        return questions.setActiveQuestion(prevPosition);
       });
-
       currentPosition -= 1;
     }
   };
@@ -87,29 +90,29 @@ var scrollForm = function () {
     next: next,
     prev: prev
   };
-
 };
 
 module.exports = scrollForm();
 
 },{"./questions":2,"./scrolling":4}],4:[function(require,module,exports){
+'use strict';
+
 var zenscroll = require('zenscroll');
 
-var scrolling = function () {
+var scrolling = function scrolling() {
 
-  var createScroller = function (container, speed, offset) {
+  var createScroller = function createScroller(container, speed, offset) {
     return zenscroll.createScroller(container, speed, offset);
-  }
+  };
 
-  var scrollTo = function(scroller, element, speed, callback) {
-    scroller.center(element, speed, 0, callback)
+  var scrollTo = function scrollTo(scroller, element, speed, callback) {
+    scroller.center(element, speed, 0, callback);
   };
 
   return {
     scrollTo: scrollTo,
     createScroller: createScroller
   };
-
 };
 
 module.exports = scrolling();

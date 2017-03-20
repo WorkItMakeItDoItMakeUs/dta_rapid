@@ -1,25 +1,18 @@
-var questions = function () {
+const questions = () => {
 
-  var CONTAINER_ID = "container",
-      CLASS_NAME = "scroll-form__questionset",
-      ACTIVE_CLASS = "scroll-form__questionset--active";
+  const CONTAINER_ID = "container";
+  const CLASS_NAME = "scroll-form__questionset";
+  const ACTIVE_CLASS = "scroll-form__questionset--active";
 
   return {
-    getContainer: function () { return document.getElementById(CONTAINER_ID); },
-    getQuestion: function (index) {
-      return document.getElementsByClassName(CLASS_NAME)[index];
-    },
+    getContainer: () => document.getElementById(CONTAINER_ID),
+    getQuestion: (index) => document.getElementsByClassName(CLASS_NAME)[index],
     setActiveQuestion: function(index) {
-      var questionList = [].slice.call(document.getElementsByClassName(CLASS_NAME));
-
-      questionList.forEach(function(elm) {
-        elm.classList.remove(ACTIVE_CLASS);
-      });
-
+      const questionList = [].slice.call(document.getElementsByClassName(CLASS_NAME));
+      questionList.forEach((elm) => elm.classList.remove(ACTIVE_CLASS));
       this.getQuestion(index).classList.add(ACTIVE_CLASS);
     }
   };
-
 };
 
 module.exports = questions();

@@ -1,56 +1,48 @@
-var scrolling = require('./scrolling');
-var questions = require('./questions');
+const scrolling = require('./scrolling');
+const questions = require('./questions');
 
-var scrollForm = function () {
+const scrollForm = () => {
 
   // TODO  index() = function () {}
-  // TODO: Can haz ES6?
 
-  var scroller,
-      currentPosition = 0,
-      speed = 400;
+  let scroller;
+  let currentPosition = 0;
 
-  var init = function () {
-    var container = questions.getContainer();
-    var firstQuestion = questions.getQuestion(0);
+  const speed = 400;
+
+  const init = () => {
+    const container = questions.getContainer();
+    const firstQuestion = questions.getQuestion(0);
 
     scroller = scrolling.createScroller(container, 0, 0)
 
-    scrolling.scrollTo(scroller, firstQuestion, speed, function() {
-      questions.setActiveQuestion(0);
-    });
+    scrolling.scrollTo(scroller, firstQuestion, speed, () => questions.setActiveQuestion(0));
   };
 
-  var next = function () {
-    var nextPosition = currentPosition + 1;
-    var newTarget = questions.getQuestion(nextPosition);
+  const next = () => {
+    const nextPosition = currentPosition + 1;
+    const newTarget = questions.getQuestion(nextPosition);
 
     if (newTarget) {
-      scrolling.scrollTo(scroller, newTarget, speed, function() {
-        questions.setActiveQuestion(nextPosition);
-      });
-
+      scrolling.scrollTo(scroller, newTarget, speed, () => questions.setActiveQuestion(nextPosition));
       currentPosition += 1;
     }
   };
 
-  var prev = function () {
-    var prevPosition = currentPosition - 1;
-    var newTarget = questions.getQuestion(prevPosition);
+  const prev = () => {
+    const prevPosition = currentPosition - 1;
+    const newTarget = questions.getQuestion(prevPosition);
 
     if (newTarget) {
-      scrolling.scrollTo(scroller, newTarget, speed, function() {
-        questions.setActiveQuestion(prevPosition);
-      });
-
+      scrolling.scrollTo(scroller, newTarget, speed, () => questions.setActiveQuestion(prevPosition));
       currentPosition -= 1;
     }
   };
 
   return {
-    init: init,
-    next: next,
-    prev: prev
+    init,
+    next,
+    prev,
   };
 
 };
