@@ -11,6 +11,7 @@
     "chai": "^3.5.0",
     "eslint": "^3.16.0",
     "mocha": "^3.2.0",
+    "simple-mock": "^0.7.3",
     "zenscroll": "^3.3.0"
   }
 }
