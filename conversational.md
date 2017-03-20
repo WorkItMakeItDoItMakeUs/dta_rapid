@@ -6,6 +6,12 @@ layout: conversational
 
 <div class="scroll-form__questionset">
   <section class="scroll-form__question">
+    {% include forms/date-field.html label="Question 0" className="scroll-form__text-field" %}
+  </section>
+</div>
+
+<div class="scroll-form__questionset">
+  <section class="scroll-form__question">
     {% include forms/text-field.html label="Question 1" className="scroll-form__text-field" %}
   </section>
 </div>

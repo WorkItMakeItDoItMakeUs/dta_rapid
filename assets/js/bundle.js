@@ -5,10 +5,19 @@ var scrollForm = require('./scroll-form');
 
 scrollForm.init();
 
+$('document').ready(function () {
+  //const isNotMobile = ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/));
+  var isNotMobile = !navigator.userAgent.match(/Mobi/);
+
+  if (isNotMobile) {
+    $('input[type=date]').pickadate();
+  }
+});
+
 module.exports = scrollForm;
 
 },{"./scroll-form":3}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var questions = function questions() {
 

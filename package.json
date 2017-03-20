@@ -19,6 +19,7 @@
   "dependencies": {
     "jquery": "^3.2.0",
     "parsley": "^0.1.0",
+    "pickadate": "^3.5.6",
     "zenscroll": "^3.3.0"
   },
   "browserify": {
