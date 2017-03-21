@@ -16,6 +16,10 @@
 .multiple-choice__list {
   list-style: none;
   padding-left: 0;
+
+  @include media($tablet) {
+    max-width: $mobile-minwidth;
+  }
 }
 
 .multiple-choice__option {

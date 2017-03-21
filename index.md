@@ -28,11 +28,14 @@ breadcrumbs:
 
 {% include forms/submit-button.html %}
 
+
 </form>
 
 {% include buttons/link-button.html text="Start" %}
 
 {% include buttons/link-button.html onclick="alert('hello')" text="Control Button" %}
+
+{% include buttons/upload-button.html id="upload_reciept" label="Upload reciept" %}
 
 {% include forms/radio-field.html options="Yes|No|Maybe" question="Do you like pie?" %}
 

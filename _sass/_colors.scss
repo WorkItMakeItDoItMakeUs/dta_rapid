@@ -66,9 +66,10 @@ $input-focus-color:         $focus-color;
 
 $border-color:              $light-grey;
 $border-highlight-color:    $grey;
+
 $background-color:          white;
 $background-color--inverted: $dark-grey;
-$background-secondary-color: $lighter-grey;
+$background-color--secondary: $lighter-grey;
 
 // Badge colors - see _sass/components/_badge.scss
 
