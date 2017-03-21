@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 const zenscroll = require('zenscroll');
 
@@ -9,7 +9,7 @@ const scrolling = () => {
   };
 
   let scrollTo = (scroller, element, speed, callback) => {
-    scroller.center(element, speed, 0, callback)
+    scroller.center(element, speed, 0, callback);
   };
 
   return {

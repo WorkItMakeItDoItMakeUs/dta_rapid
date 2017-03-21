@@ -1,15 +1,28 @@
 #!/usr/bin/env bash
 
-MAX="13"
+MAX="10"
 
 echo "============================="
 echo "Checking for TODOs and FIXMEs"
 echo "============================="
 
-TODOS=$(grep -irInH --exclude-dir="node_modules" --exclude-dir=".git" --exclude-dir="*/vendor/*" --exclude-dir="_sass" --exclude-dir="_build_scripts" TODO . | wc -l)
+EXCLUDE_DIRS=(
+  'node_modules'
+  '.git'
+  '*/vendor/*'
+  '_sass'
+  '_build_scripts'
+)
+
+EXCLUDE_FILES=(
+  'bundle.js'
+)
+
+TODOS=$(grep -irInH "${EXCLUDE_DIRS[@]/#/--exclude-dir=}" "${EXCLUDE_FILES[@]/#/--exclude=}" TODO . | wc -l)
+
 echo -e "Total TODOs:\t$TODOS"
 
-FIXMES=$(grep -irInH --exclude-dir="node_modules" --exclude-dir=".git" --exclude-dir="*/vendor/*" --exclude-dir="_sass" --exclude-dir="_build_scripts" FIXME . | wc -l)
+FIXMES=$(grep -irInH "${EXCLUDE_DIRS[@]/#/--exclude-dir=}" "${EXCLUDE_FILES[@]/#/--exclude=}" FIXME . | wc -l)
 echo -e "Total FIXMEs:\t$FIXMES"
 
 echo ""
@@ -19,9 +32,9 @@ if ((SUM > MAX)); then
   echo "Too many TODOs and FIXMEs ($SUM > $MAX)"
 
   echo "TODOs"
-  grep -irInH --exclude-dir="node_modules" --exclude-dir="*/vendor/*" --exclude-dir="_build_scripts" --exclude_dir="_sass" TODO .
+  grep -irInH "${EXCLUDE_DIRS[@]/#/--exclude-dir=}" "${EXCLUDE_FILES[@]/#/--exclude=}" TODO .
   echo "FIXMEs"
-  grep -irInH --exclude-dir="node_modules" --exclude-dir="*/vendor/*" --exclude-dir="_build_scripts" --exclude_dir="_sass" FIXME .
+  grep -irInH "${EXCLUDE_DIRS[@]/#/--exclude-dir=}" "${EXCLUDE_FILES[@]/#/--exclude=}" FIXME .
   echo ""
   echo "Failing build..."
 

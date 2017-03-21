@@ -1,4 +1,4 @@
-var scrollForm = require('./scroll-form');
+const scrollForm = require('./scroll-form');
 
 scrollForm.init();
 

@@ -8,10 +8,12 @@ const questions = () => {
 
   return {
     getContainer: () => document.getElementById(CONTAINER_ID),
-    getQuestion: (index) => document.getElementsByClassName(CLASS_NAME)[index],
+    getQuestion: index => document.getElementsByClassName(CLASS_NAME)[index],
     setActiveQuestion: function(index) {
       const questionList = [].slice.call(document.getElementsByClassName(CLASS_NAME));
-      questionList.forEach((elm) => elm.classList.remove(ACTIVE_CLASS));
+
+      questionList.forEach(elm => elm.classList.remove(ACTIVE_CLASS));
+
       this.getQuestion(index).classList.add(ACTIVE_CLASS);
     }
   };

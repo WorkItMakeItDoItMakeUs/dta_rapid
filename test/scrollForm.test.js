@@ -6,9 +6,9 @@ const scrolling = require('../assets/js/scrolling');
 const questions = require('../assets/js/questions');
 const scrollForm = require('../assets/js/scroll-form');
 
-describe('scrollForm', function () {
+describe('scrollForm', () => {
 
-  beforeEach(function() {
+  beforeEach(() => {
     simple.mock(scrolling, 'scrollTo').returnWith(undefined);
     simple.mock(scrolling, 'createScroller').returnWith(undefined);
     simple.mock(scrolling, 'center').returnWith(undefined);
@@ -17,39 +17,33 @@ describe('scrollForm', function () {
     simple.mock(questions, 'getQuestion').returnWith(1);
   });
 
-  describe('next()', function () {
+  describe('next()', () => {
 
-    afterEach(function() {
-      simple.restore();
-    });
+    afterEach(() => simple.restore());
 
-    it('scrolls to the next questionset', function () {
+    it('scrolls to the next questionset', () => {
       scrollForm.next();
 
       expect(scrolling.scrollTo.called).to.be.true;
     });
   });
 
-  describe('prev()', function () {
+  describe('prev()', () => {
 
-    afterEach(function() {
-      simple.restore();
-    });
+    afterEach(() => simple.restore());
 
-    it('scrolls to the previous questionset', function () {
+    it('scrolls to the previous questionset', () => {
       scrollForm.prev();
 
       expect(scrolling.scrollTo.called).to.be.true;
     });
   });
 
-  describe('init()', function () {
+  describe('init()', () => {
 
-    afterEach(function() {
-      simple.restore();
-    });
+    afterEach(() => simple.restore());
 
-    it('scrolls to the first questionset', function () {
+    it('scrolls to the first questionset', () => {
       scrollForm.init();
 
       expect(scrolling.createScroller.called).to.be.true;
