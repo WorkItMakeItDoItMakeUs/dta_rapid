@@ -7,6 +7,7 @@ layout: conversational
 <div class="scroll-form__questionset">
   <section class="scroll-form__question">
     {% include forms/text-field.html label="Question 1" className="scroll-form__text-field" %}
+    {% include forms/text-field.html label="Question 1" className="scroll-form__text-field" %}
   </section>
 </div>
 
@@ -24,6 +25,7 @@ layout: conversational
 
 <footer class="scroll-form__footer">
   <div class="wrapper">
+    {% include buttons/link-button.html onclick="technologic.prev(); return false;" text="Prev" %}
     {% include buttons/link-button.html onclick="technologic.next(); return false;" text="Next" %}
   </div>
 </footer>

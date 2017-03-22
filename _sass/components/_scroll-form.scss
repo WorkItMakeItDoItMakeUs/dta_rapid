@@ -18,8 +18,11 @@
 
 .scroll-form__question {
   width: 100%;
-  display: block;
   padding-bottom: $large-spacing;
+
+  @include media($tablet-minwidth) {
+    max-width: $mobile-minwidth;
+  }
 }
 
 .scroll-form__footer {
