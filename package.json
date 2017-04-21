@@ -2,35 +2,37 @@
   "name": "dta_rapid",
   "repository": "git@github.com:gtrogers/dta_rapid.git",
   "author": "@WorkItMakeItDoItMakeUs",
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint .",
-    "test": "./node_modules/.bin/mocha ./**/*.test.js"
-  },
-  "devDependencies": {
-    "babel-preset-es2015": "^6.24.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.1.0",
-    "chai": "^3.5.0",
-    "eslint": "^3.16.0",
-    "mocha": "^3.2.0",
-    "simple-mock": "^0.7.3",
-    "zenscroll": "^3.3.0"
-  },
+  "scripts": {},
   "dependencies": {
+    "@gov.au/body": "^0.1.0",
+    "@gov.au/buttons": "^0.2.0",
+    "@gov.au/footer": "^0.1.0",
+    "@gov.au/header": "^1.0.0",
+    "@gov.au/page-alerts": "^0.1.1",
+    "@gov.au/pancake-sass": "^1.0.9",
     "jquery": "^3.2.0",
-    "parsley": "^0.1.0",
-    "zenscroll": "^3.3.0"
+    "parsley": "^0.1.0"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ]
-    ]
+  "pancake": {
+    "auto-save": true,
+    "plugins": true,
+    "ignore": [],
+    "sass": {
+      "modules": true,
+      "location": "_sass/vendor/uikit",
+      "name": "uikit.scss"
+    },
+    "css": {
+      "minified": true,
+      "modules": false,
+      "browsers": [
+        "last 2 versions",
+        "ie 8",
+        "ie 9",
+        "ie 10"
+      ],
+      "location": "assets/css/",
+      "name": "uikit.min.css"
+    }
   }
 }
