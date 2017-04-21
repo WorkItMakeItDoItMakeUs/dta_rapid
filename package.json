@@ -7,6 +7,7 @@
     "@gov.au/body": "^0.1.0",
     "@gov.au/buttons": "^0.2.0",
     "@gov.au/footer": "^0.1.0",
+    "@gov.au/grid-12": "^0.1.0",
     "@gov.au/header": "^1.0.0",
     "@gov.au/page-alerts": "^0.1.1",
     "@gov.au/pancake-sass": "^1.0.9",
@@ -20,7 +21,7 @@
     "sass": {
       "modules": true,
       "location": "_sass/vendor/uikit",
-      "name": "uikit.scss"
+      "name": "_uikit.scss"
     },
     "css": {
       "minified": true,

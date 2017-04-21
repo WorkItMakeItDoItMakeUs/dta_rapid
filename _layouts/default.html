@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="/assets/style.css">
   </head>
 
-  <body>
-    <header>
-      <div class="wrapper"><p class="callout__root">This is a prototype. Please don't fill it in with your real information.</p></div>
-    </header>
-    <main>
-    <div class="wrapper">{{ content }}</div>
+  <body class="uikit-body">
+    <main class="uikit-grid">
+      <div class="container">
+        <header>
+          <div>
+            <div class="uikit-page-alerts uikit-page-alerts--warning">This is a prototype. Please don't fill it in with your real information.</div>
+          </div>
+        </header>
+        {{ content }}
+      </div>
     </main>
     <script src="/assets/js/vendor/jquery-3.1.1.min.js"></script>
     <script src="/assets/js/vendor/parsley.min.js"></script>

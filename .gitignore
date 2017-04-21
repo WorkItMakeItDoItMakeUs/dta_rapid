@@ -6,3 +6,6 @@ Gemfile.lock
 *.swp
 .DS_Store
 node_modules
+
+_sass/vendor/uikit
+assets/css/uikit.min.css
