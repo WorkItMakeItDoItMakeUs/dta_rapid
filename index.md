@@ -6,15 +6,22 @@ breadcrumbs:
     href: '#page2'
   - title: 'Page 3'
     href: '#page3'
+
+paragraphs:
+  - 'Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.'
+  - 'Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.'
 ---
 
 # Examples
 
 {% include typography/badge.html text="Prototype" %}
 
-{% include typography/callout.html text="This is a callout." %}
+## Callouts
+{% include callouts/paragraph-callout.html text="Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl." %}
 
-{% include typography/callout.html text="This is also a callout." style="info" %}
+{% include callouts/container-callout.html paragraphs=page.paragraphs %}
+
+{% include callouts/calendar-callout.html lede="The next public holiday is:" date="Sunday 1 January" name="New Year's Day" %}
 
 <form id="form" data-parsley-validate="" data-parsley-error-class="invalid">
 
