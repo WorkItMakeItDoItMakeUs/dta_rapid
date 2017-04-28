@@ -9,3 +9,4 @@ node_modules
 
 _sass/vendor/uikit
 assets/css/uikit.min.css
+_sass/vendor/
