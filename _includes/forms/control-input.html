@@ -1,0 +1,26 @@
+{% assign options = include.options | split: "|" %}
+{% assign question_slug = include.question | slugify %}
+
+<div id="control-input--{{ question_slug}}" class="{{ include.className}}">
+  <h3 id="control-input--{{ question_slug}}">{{include.question}}</h3>
+  {% for option in options %}
+    {% assign option_slug = option | slugify %}
+    <p>
+    <label
+      class="uikit-control-input"
+      for="{{ question_slug }}__{{ option_slug }}">
+      <input
+        {% if include.required %}data-parsley-required{% endif %}
+        aria-describedby="control-input--{{ question_slug}}"
+        class="uikit-control-input__input"
+        id="{{ question_slug }}__{{ option_slug }}"
+        name="{{ question_slug }}"
+        type="{{ include.type | default: 'radio' }}"
+        data-parsley-errors-container="#parent__{{ question_slug }}"
+        data-parsley-error-message="{{ include.validation_message }}"
+        value="{{ question_slug }}__{{ option_slug }}">
+        <span class="uikit-control-input__text">{{ option }}</span>
+      </label>
+    </p>
+  {% endfor %}
+</div>

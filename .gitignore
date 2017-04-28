@@ -7,5 +7,6 @@ Gemfile.lock
 .DS_Store
 node_modules
 
-_sass/vendor/uikit
-assets/css/uikit.min.css
+assets/uikit.min.css
+assets/uikit.css
+pancake

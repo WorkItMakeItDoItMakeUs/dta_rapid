@@ -6,25 +6,23 @@
   "dependencies": {
     "@gov.au/body": "^0.1.0",
     "@gov.au/buttons": "^0.2.0",
+    "@gov.au/callout": "^0.1.0",
+    "@gov.au/control-input": "^0.1.0",
     "@gov.au/footer": "^0.1.0",
     "@gov.au/grid-12": "^0.1.0",
     "@gov.au/header": "^1.0.0",
     "@gov.au/page-alerts": "^0.1.1",
-    "@gov.au/pancake-sass": "^1.0.9",
+    "@gov.au/pancake-sass": "^1.0.10",
+    "@gov.au/text-inputs": "^0.1.0",
     "jquery": "^3.2.0",
     "parsley": "^0.1.0"
   },
   "pancake": {
-    "auto-save": true,
+    "auto-save": false,
     "plugins": true,
     "ignore": [],
-    "sass": {
-      "modules": true,
-      "location": "_sass/vendor/uikit",
-      "name": "_uikit.scss"
-    },
     "css": {
-      "minified": true,
+      "minified": false,
       "modules": false,
       "browsers": [
         "last 2 versions",
@@ -32,8 +30,8 @@
         "ie 9",
         "ie 10"
       ],
-      "location": "assets/css/",
-      "name": "uikit.min.css"
+      "location": "assets",
+      "name": "uikit.css"
     }
   }
 }

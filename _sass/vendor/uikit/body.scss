@@ -1,8 +1,0 @@
-/* @gov.au/body v0.1.0 */
-
-@import "/Users/andrew/Code/dta_rapid/node_modules/sass-versioning/dist/_index.scss";
-
-@import "/Users/andrew/Code/dta_rapid/node_modules/@gov.au/core/lib/sass/_module.scss";
-@import "/Users/andrew/Code/dta_rapid/node_modules/@gov.au/body/lib/sass/_module.scss";
-
-@include versioning-check();

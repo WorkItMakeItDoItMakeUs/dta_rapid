@@ -22,9 +22,9 @@ breadcrumbs:
 
 {% include forms/error-container.html text="Help text for when something goes wrong" %}
 
-{% include forms/text-field.html id="text-field" label="Text input" required=true %}
+{% include forms/text-field.html id="text-field" label="Text input" %}
 
-{% include forms/date-field.html id="date-field" label="Pick a date" required=true %}
+{% include forms/date-field.html id="date-field" label="Pick a date" %}
 
 {% include forms/submit-button.html %}
 
@@ -37,11 +37,9 @@ breadcrumbs:
 
 {% include buttons/upload-button.html id="upload_reciept" label="Upload reciept" %}
 
-{% include forms/radio-field.html options="Yes|No|Maybe" question="Do you like pie?" %}
+{% include forms/control-input.html options="Yes|No|Maybe" question="Do you like pie?" %}
 
-{% include forms/multiple-choice.html options="Yes|No|Maybe" question="Do you like pies?" %}
-
-{% include forms/multiple-choice.html options="Yes|Absolutely|100%" type="checkbox" question="Do you like checking boxes?" %}
+{% include forms/control-input.html options="Yes|Absolutely|100%" type="checkbox" question="Do you like checking boxes?" %}
 
 {% include navigation/breadcrumbs.html breadcrumbs=page.breadcrumbs %}
 

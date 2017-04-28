@@ -5,15 +5,15 @@
   {% assign required="required" %}
 {% endif %}
 
-<div class="text-field {{ include.className | default: null }}">
-  <label class="text-field__label" for="{{ include.id | default: id }}">
+<div class="uikit-text-input__root {{ include.className | default: null }}">
+  <label class="uikit-text-input__label" for="{{ include.id | default: id }}">
     {{ include.label }}
   </label>
   {% if include.hint %}
-    <label class="text-field__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
+    <label class="uikit-text-input__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
   {% endif %}
   <input
-    class="text-field__input"
+    class="uikit-text-input uikit-text-input--block"
     placeholder="{{ include.placeholder }}"
     type="{{ include.type | default: "text" }}"
     id="{{ include.id }}"
@@ -24,6 +24,6 @@
     {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
   />
   {% if include.description %}
-    <p class="text-field__description">{{ include.description }}</p>
+    <p class="uikit-text-input__description">{{ include.description }}</p>
   {% endif %}
 </div>
