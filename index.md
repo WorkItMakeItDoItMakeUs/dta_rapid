@@ -14,14 +14,25 @@ paragraphs:
 
 # Examples
 
-{% include typography/badge.html text="Prototype" %}
-
 ## Callouts
 {% include callouts/paragraph-callout.html text="Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl." %}
 
 {% include callouts/container-callout.html paragraphs=page.paragraphs %}
 
 {% include callouts/calendar-callout.html lede="The next public holiday is:" date="Sunday 1 January" name="New Year's Day" %}
+
+## Control inputs
+### Checkboxes
+{% include control-inputs/checkbox.html text="A" %}
+{% include control-inputs/checkbox.html text="B" %}
+{% include control-inputs/checkbox.html text="C" %}
+
+### Radio buttons
+{% include control-inputs/radio.html text="A" %}
+{% include control-inputs/radio.html text="B" %}
+{% include control-inputs/radio.html text="C" %}
+
+{% include typography/badge.html text="Prototype" %}
 
 <form id="form" data-parsley-validate="" data-parsley-error-class="invalid">
 
@@ -34,7 +45,6 @@ paragraphs:
 {% include forms/date-field.html id="date-field" label="Pick a date" required=true %}
 
 {% include forms/submit-button.html %}
-
 
 </form>
 
