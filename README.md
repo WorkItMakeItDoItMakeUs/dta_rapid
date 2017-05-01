@@ -50,5 +50,4 @@ The theme is available as open source under the terms of the [MIT License](https
 
 ## Attribution
 
-The CSS and javascript used from this theme are pulled from - https://github.com/AusDTO/gov-au-ui-kit
-
+The CSS and javascript used from this theme are compiled from - https://github.com/govau/uikit
