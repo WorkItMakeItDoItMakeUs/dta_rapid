@@ -6,6 +6,7 @@ Gemfile.lock
 *.swp
 .DS_Store
 node_modules
+npm-debug.log
 
 assets/uikit.min.css
 assets/uikit.css
