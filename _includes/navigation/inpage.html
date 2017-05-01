@@ -1,0 +1,8 @@
+<nav class="uikit-inpage-nav-links">
+	<h2 class="uikit-inpage-nav-links__heading uikit-display-2">{{include.heading}}</h2>
+	<ul class="uikit-link-list">
+		{% for link in include.links %}
+			<li><a href="{{link.href}}">{{link.text}}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

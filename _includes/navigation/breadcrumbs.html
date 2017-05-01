@@ -1,13 +1,11 @@
-<nav class="breadcrumbs" aria-label="breadcrumb">
-  <div class="wrapper">
-    <ul class="breadcrumbs__list">
-      {% for breadcrumb in include.breadcrumbs %}
-        {% if forloop.last == true %}
-          <li class="breadcrumbs__item">{{breadcrumb.title}}</li>
-        {% else %}
-          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="{{breadcrumb.href}}" title="Home">{{breadcrumb.title}}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
+<nav class="uikit-breadcrumbs" aria-label="breadcrumb">
+  <ul class="uikit-link-list uikit-link-list--inline">
+    {% for breadcrumb in include.breadcrumbs %}
+      {% if forloop.last == true %}
+        <li>{{breadcrumb.title}}</li>
+      {% else %}
+        <li><a href="{{breadcrumb.href}}">{{breadcrumb.title}}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </nav>
