@@ -4,12 +4,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/style.css">
   </head>
 
   <body class="uikit-body">
     <main class="uikit-grid">
+      {% if page.header.title %}
+        <header class="uikit-header uikit-header--light">
+          <div class="container">
+            {% if page.header.title %}{{ page.header.title }}{% endif %}
+          </div>
+        </header>
+      {% endif %}
       <div class="container">
         {{ content }}
       </div>

@@ -3,6 +3,24 @@
 
 @import "/assets/uikit.css";
 
+.uikit-grid .container:before,
+.uikit-grid .container:after,
+.uikit-grid .container-fluid:before,
+.uikit-grid .container-fluid:after {
+  content: none;
+}
+
+.uikit-body {
+  p {
+    margin-bottom: 0.8em;
+  }
+}
+
+.uikit-header {
+  padding: 1.25em 0;
+  margin-bottom: 1em;
+}
+
 .uikit-fileupload input[type="file"] {
   width: 0.1px;
 	height: 0.1px;
@@ -10,4 +28,23 @@
 	overflow: hidden;
 	position: absolute;
 	z-index: -1;
+}
+
+a.uikit-btn {
+  color: white;
+}
+
+.uikit-btn {
+  text-align: center;
+
+  @media (max-width: 640px) {
+    display: block;
+  }
+}
+
+button.uikit-btn {
+  @media (max-width: 640px) {
+    display: block;
+    width: 100%;
+  }
 }
