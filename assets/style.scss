@@ -31,7 +31,7 @@
 }
 
 a.uikit-btn {
-  color: white;
+  color: #fff;
 }
 
 .uikit-btn {
@@ -47,4 +47,14 @@ button.uikit-btn {
     display: block;
     width: 100%;
   }
+}
+
+.footer--fixed-bottom {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0.6em;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
