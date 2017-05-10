@@ -8,10 +8,12 @@
 
   <tbody>
     {% include forms/item-row.html %}
+    {% include forms/item-row.html %}
+    {% include forms/item-row.html %}
   </tbody>
 </table>
 
-{% include buttons/link-button.html text="Add another item" onclick="addRow()"%}
+{% include buttons/link-button.html text="Add another item" className="uikit-btn--tertiary" onclick="addRow()"%}
 
 <script type="text/javascript">
   var addRow = function() {

@@ -1,1 +1,1 @@
-<a class="uikit-btn" role="button" href="{{ include.href | default: '##' }}" {% if include.onclick %}onclick="{{ include.onclick }}"{% endif %}>{{ include.text }}</a>
+<a class="uikit-btn {{ include.className}}" role="button" href="{{ include.href | default: '##' }}" {% if include.onclick %}onclick="{{ include.onclick }}"{% endif %}>{{ include.text }}</a>

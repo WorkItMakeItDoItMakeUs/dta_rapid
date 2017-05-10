@@ -8,6 +8,7 @@
 .uikit-body {
   p {
     margin-bottom: uikit-space(0.5);
+    max-width: none;
   }
 }
 
@@ -25,12 +26,32 @@
 	z-index: -1;
 }
 
-a.uikit-btn {
+a.uikit-btn,
+a.uikit-btn.uikit-btn--primary {
   color: #fff;
 
   &:hover,
   &:focus {
     background-color: $uikit-colour-Primary--30;
+  }
+}
+
+a.uikit-btn.uikit-btn--secondary {
+  border-bottom: 1px solid $uikit-colour-Secondary;
+
+  &:hover,
+  &:focus {
+    background-color: $uikit-colour-Secondary--30;
+  }
+}
+
+a.uikit-btn.uikit-btn--tertiary {
+  color: $uikit-colour-Text;
+
+  &:hover,
+  &:focus {
+    background-color: $uikit-colour-Primary-10;
+    border: 1px solid $uikit-colour-Primary;
   }
 }
 

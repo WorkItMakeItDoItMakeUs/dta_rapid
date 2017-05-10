@@ -2,7 +2,7 @@
 {% assign question_slug = include.question | slugify %}
 
 <div id="control-input--{{ question_slug}}" class="{{ include.className}}">
-  <h3 id="control-input--{{ question_slug}}">{{include.question}}</h3>
+  <label id="control-input--{{ question_slug}}">{{include.question}}</label>
   {% for option in options %}
     {% assign option_slug = option | slugify %}
     <p>
