@@ -8,12 +8,24 @@
 
   <tbody>
     {% include forms/item-row.html %}
-    {% include forms/item-row.html %}
-    {% include forms/item-row.html %}
-    <tr><td><button class="uikit-btn uikit-btn--secondary">Add another item</button></td><td></td></tr>
   </tbody>
 </table>
 
-<script type="text/javascript">
+{% include buttons/link-button.html text="Add another item" onclick="addRow()"%}
 
+<script type="text/javascript">
+  var addRow = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'document';
+
+    xhr.open('GET', '/partials/item-table');
+    xhr.onload = function() {
+      var tableRow = this.response.querySelector('.item-row');
+      var tableBody  = document.querySelector('.uikit-table tbody');
+
+      tableBody.appendChild(tableRow);
+    };
+
+    xhr.send();
+  }
 </script>
