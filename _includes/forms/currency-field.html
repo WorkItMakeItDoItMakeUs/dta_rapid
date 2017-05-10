@@ -5,7 +5,7 @@
   {% assign required="required" %}
 {% endif %}
 
-<p class="uikit-text-input__root {{ include.className | default: null }} currency">
+<p class="uikit-currency-input__root {{ include.className | default: null }}">
   {% if include.label %}
     <label class="uikit-text-input__label" for="{{ include.id | default: id }}">{{ include.label }}</label>
   {% endif %}
@@ -14,12 +14,12 @@
     <label class="uikit-text-input__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
   {% endif %}
 
-  <span class="currency-prefix">$</span>
+  <label for="{{ include.id }}" class="uikit-currency-input__prefix">$</label>
 
   <input
-    class="uikit-text-input uikit-text-input--block"
+    class="uikit-text-input uikit-text-input--block uikit-currency-input__input"
     placeholder="{{ include.placeholder }}"
-    type="number"
+    pattern="[0-9]*"
     id="{{ include.id }}"
     value="{{ include.value | default: "" }}"
     name="{{ include.name | default: name }}"

@@ -1,17 +1,18 @@
-.currency {
-  display: table;
-  width: 100%;
+.uikit-currency-input__root {
+  position: relative;
 }
 
-.currency-prefix {
-  background: #ccc;
-  display: table-cell;
+.uikit-currency-input__prefix {
+  width: uikit-space(1.25);
+  line-height: 1.4;
+  position: absolute;
+  text-align: center;
+  padding: 0.4em 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 
-@media (max-width: $mobile-break-point) {
-
-  .currency-prefix {
-    text-align: center;
-  }
-
+.uikit-currency-input__input {
+  padding-left: uikit-space(1.25);
 }
