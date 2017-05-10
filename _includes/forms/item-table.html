@@ -20,7 +20,7 @@
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'document';
 
-    xhr.open('GET', '/partials/item-table');
+    xhr.open('GET', window.location.href);
     xhr.onload = function() {
       var tableRow = this.response.querySelector('.item-row');
       var tableBody  = document.querySelector('.uikit-table tbody');
