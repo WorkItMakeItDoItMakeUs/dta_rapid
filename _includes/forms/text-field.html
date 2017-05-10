@@ -6,9 +6,11 @@
 {% endif %}
 
 <div class="uikit-text-input__root {{ include.className | default: null }}">
-  <label class="uikit-text-input__label" for="{{ include.id | default: id }}">
-    {{ include.label }}
-  </label>
+  {% if include.label %}
+    <label class="uikit-text-input__label" for="{{ include.id | default: id }}">
+      {{ include.label }}
+    </label>
+  {% endif %}
   {% if include.hint %}
     <label class="uikit-text-input__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
   {% endif %}
