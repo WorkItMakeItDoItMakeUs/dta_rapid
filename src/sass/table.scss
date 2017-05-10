@@ -1,48 +1,55 @@
 .uikit-table {
- border-collapse: collapse;
- border-spacing: 0;
- margin:0;
- padding:0;
- width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin:0;
+  padding:0;
+  width: 100%;
 
- tr {
-   padding: 5px;
- }
- th, td {
-   text-align: center;
- }
- td {
-   padding: 10px;
+  tr {
+    padding: 5px;
+  }
 
-   &:first-child {
-     padding-left: 0;
-   }
-   &:last-child {
-     padding-right: 0;
-   }
- }
- @media screen and (max-width: $mobile-break-point) {
-   border: 0;
+  th, td {
+    text-align: center;
+  }
 
-   thead {
-     display: none;
-   }
-   tr {
-     display: block;
-     margin-bottom: 10px;
-     padding: 5px 0;
-   }
-   td {
-     display: block;
-     font-size: 13px;
-     padding: 10px 0;
-     text-align: right;
-   }
-   td:before {
-     content: attr(data-label);
-     float: left;
-     text-transform: uppercase;
-     font-weight: bold;
-   }
- }
+  td {
+    padding: 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  @media screen and (max-width: $mobile-break-point) {
+    border: 0;
+
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px 0;
+    }
+
+    td {
+      display: block;
+      font-size: 13px;
+      padding: 10px 0;
+      text-align: right;
+    }
+
+    td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
 }
