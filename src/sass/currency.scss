@@ -3,6 +3,7 @@
 }
 
 .uikit-currency-input__prefix {
+  display: none;
   width: uikit-space(1.25);
   line-height: 1.4;
   position: absolute;
@@ -13,6 +14,6 @@
   left: 0;
 }
 
-.uikit-currency-input__input {
-  padding-left: uikit-space(1.25);
-}
+// .uikit-currency-input__input {
+//   padding-left: uikit-space(1.25);
+// }

@@ -1,8 +1,8 @@
 {% assign options = include.options | split: "|" %}
 {% assign question_slug = include.question | slugify %}
 
-<div id="control-input--{{ question_slug}}" class="{{ include.className}}">
-  <label id="control-input--{{ question_slug}}">{{include.question}}</label>
+<div id="control-input__{{ question_slug}}" class="{{ include.className}}">
+  <label class="uikit-text-input__label" id="control-input__{{ question_slug}}">{{include.question}}</label>
   {% for option in options %}
     {% assign option_slug = option | slugify %}
     <p>

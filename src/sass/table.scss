@@ -1,12 +1,13 @@
 .uikit-table {
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
   margin:0;
   padding:0;
-  width: 100%;
 
   tr {
-    padding: 5px;
+    padding: uikit-space(0.25);
   }
 
   th, td {
@@ -14,7 +15,7 @@
   }
 
   td {
-    padding: 10px;
+    padding: uikit-space(0.25);
 
     &:first-child {
       padding-left: 0;
@@ -25,31 +26,33 @@
     }
   }
 
-  @media screen and (max-width: $mobile-break-point) {
-    border: 0;
-
-    thead {
-      display: none;
-    }
-
-    tr {
-      display: block;
-      margin-bottom: 10px;
-      padding: 5px 0;
-    }
-
-    td {
-      display: block;
-      font-size: 13px;
-      padding: 10px 0;
-      text-align: right;
-    }
-
-    td:before {
-      content: attr(data-label);
-      float: left;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-  }
+  // @media screen and (max-width: $mobile-break-point) {
+  //
+  //   thead {
+  //     display: none;
+  //   }
+  //
+  //   tr {
+  //     display: block;
+  //     margin-bottom: uikit-space(0.25);
+  //     padding: uikit-space(0.25) 0;
+  //     border-bottom: 1px $uikit-colour-Border solid;
+  //
+  //     &:last-child {
+  //       border-bottom: none;
+  //     }
+  //   }
+  //
+  //   td {
+  //     display: block;
+  //     padding: uikit-space(0.25) 0;
+  //     text-align: right;
+  //   }
+  //
+  //   td:before {
+  //     content: attr(data-label);
+  //     float: left;
+  //     margin-bottom: uikit-space(0.25);
+  //   }
+  // }
 }

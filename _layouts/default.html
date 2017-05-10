@@ -10,14 +10,13 @@
 
   <body class="uikit-body">
     <main class="uikit-grid">
-      {% if page.header.title %}
-        <header class="uikit-header uikit-header--light">
-          <div class="container">
-            {% if page.header.title %}{{ page.header.title }}{% endif %}
-          </div>
-        </header>
-      {% endif %}
+      <header class="uikit-header uikit-header--light">
+        <div class="container">
+          {% if page.header.title %}{{ page.header.title }}{% endif %}
+        </div>
+      </header>
       <div class="container">
+        {% if page.header.back.url %}<a href="{{ page.header.back.url }}">Back</a>{% endif %}
         {{ content }}
       </div>
     </main>

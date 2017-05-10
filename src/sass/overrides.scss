@@ -10,6 +10,12 @@
     margin-bottom: uikit-space(0.5);
     max-width: none;
   }
+  h2 {
+    margin: uikit-space(1.125) 0 uikit-space(0.5);
+  }
+  .uikit-text-input {
+    padding: uikit-space(0.5) uikit-space(0.25);
+  }
 }
 
 .uikit-header {
