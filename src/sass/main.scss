@@ -33,6 +33,11 @@ $mobile-break-point: 640px;
 
 a.uikit-btn {
   color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: $uikit-colour-Primary--30;
+  }
 }
 
 .uikit-btn {

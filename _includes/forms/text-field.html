@@ -5,7 +5,7 @@
   {% assign required="required" %}
 {% endif %}
 
-<div class="uikit-text-input__root {{ include.className | default: null }}">
+<p class="uikit-text-input__root {{ include.className | default: null }}">
   {% if include.label %}
     <label class="uikit-text-input__label" for="{{ include.id | default: id }}">
       {{ include.label }}
@@ -28,4 +28,4 @@
   {% if include.description %}
     <p class="uikit-text-input__description">{{ include.description }}</p>
   {% endif %}
-</div>
+</p>
