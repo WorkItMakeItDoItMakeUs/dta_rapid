@@ -32,6 +32,8 @@ Or install it yourself as:
 
 TODO: soon...
 
+CSS complilation through UIKit and node-sass run `npm install && npm run watch:sass`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/gtrogers/dta_rapid. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

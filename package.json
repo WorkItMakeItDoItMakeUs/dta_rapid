@@ -2,7 +2,17 @@
   "name": "dta_rapid",
   "repository": "git@github.com:gtrogers/dta_rapid.git",
   "author": "@WorkItMakeItDoItMakeUs",
-  "scripts": {},
+  "scripts": {
+		"build": "node-sass src/sass/main.scss assets/css/style.min.css --output-style compressed",
+		"watch:sass": "npm run build && onchange 'src/sass/*.scss' -- npm run build",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+  "devDependencies": {
+		"browser-sync": "^2.18.8",
+		"node-sass": "^4.5.1",
+		"npm-run-all": "^4.0.2",
+		"onchange": "^3.2.1"
+	},
   "dependencies": {
     "@gov.au/body": "^0.1.0",
     "@gov.au/buttons": "^0.3.0",
@@ -32,6 +42,11 @@
       ],
       "location": "assets",
       "name": "uikit.css"
-    }
+    },
+    "sass": {
+			"modules": false,
+			"location": "src/sass/",
+			"name": "uikit.scss"
+		}
   }
 }
