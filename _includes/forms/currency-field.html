@@ -1,0 +1,34 @@
+{% assign id=include.id %}
+{% assign name=include.id %}
+
+{% if include.required %}
+  {% assign required="required" %}
+{% endif %}
+
+<p class="uikit-text-input__root {{ include.className | default: null }} currency">
+  {% if include.label %}
+    <label class="uikit-text-input__label" for="{{ include.id | default: id }}">{{ include.label }}</label>
+  {% endif %}
+
+  {% if include.hint %}
+    <label class="uikit-text-input__hint" for="{{ include.id | default: id }}">{{ include.hint }}</label>
+  {% endif %}
+
+  <span class="currency-prefix">$</span>
+
+  <input
+    class="uikit-text-input uikit-text-input--block"
+    placeholder="{{ include.placeholder }}"
+    type="number"
+    id="{{ include.id }}"
+    value="{{ include.value | default: "" }}"
+    name="{{ include.name | default: name }}"
+    {{ required }}
+    {% if include.pattern %}data-parsley-pattern="{{ include.pattern }}"{% endif %}
+    {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
+  />
+
+  {% if include.description %}
+    <p class="uikit-text-input__description">{{ include.description }}</p>
+  {% endif %}
+</p>

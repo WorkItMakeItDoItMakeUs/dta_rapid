@@ -1,0 +1,17 @@
+.currency {
+  display: table;
+  width: 100%;
+}
+
+.currency-prefix {
+  background: #ccc;
+  display: table-cell;
+}
+
+@media (max-width: $mobile-break-point) {
+
+  .currency-prefix {
+    text-align: center;
+  }
+
+}
