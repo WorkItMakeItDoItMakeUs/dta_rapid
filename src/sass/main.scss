@@ -1,8 +1,8 @@
 $uikit-colour-Primary: #008752;
+$mobile-break-point:  640px;
 
 @import "uikit";
-
-$mobile-break-point: 640px;
+@import "table";
 
 .uikit-grid .container:before,
 .uikit-grid .container:after,
@@ -66,68 +66,3 @@ button.uikit-btn {
     left: 0;
   }
 }
-
-table {
-   border-collapse: collapse;
-   border-spacing: 0;
-   margin:0;
-   padding:0;
-   width: 100%;
- }
-
- table tr {
-   padding: 5px;
- }
-
- table th, table td {
-   text-align: center;
- }
-
- table td {
-
-   &:first-child {
-     padding-left: 0;
-   }
-   &:last-child {
-     padding-right: 0;
-   }
-
-   padding: 10px;
- }
-
- table th {
-   font-size: 14px;
-   letter-spacing: 1px;
-   text-transform: uppercase;
- }
-
- @media screen and (max-width: $mobile-break-point) {
-
-   table {
-     border: 0;
-   }
-
-   table thead {
-     display: none;
-   }
-
-   table tr {
-     display: block;
-     margin-bottom: 10px;
-     padding: 5px 0;
-   }
-
-   table td {
-     display: block;
-     font-size: 13px;
-     padding: 10px 0;
-     text-align: right;
-   }
-
-   table td:before {
-     content: attr(data-label);
-     float: left;
-     text-transform: uppercase;
-     font-weight: bold;
-   }
- }
