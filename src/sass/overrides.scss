@@ -1,0 +1,50 @@
+.uikit-grid .container:before,
+.uikit-grid .container:after,
+.uikit-grid .container-fluid:before,
+.uikit-grid .container-fluid:after {
+  content: none;
+}
+
+.uikit-body {
+  p {
+    margin-bottom: uikit-space(0.5);
+  }
+}
+
+.uikit-header {
+  padding: uikit-space(1) 0;
+  margin-bottom: uikit-space(1);
+}
+
+.uikit-fileupload input[type="file"] {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+a.uikit-btn {
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: $uikit-colour-Primary--30;
+  }
+}
+
+.uikit-btn {
+  text-align: center;
+
+  @media (max-width: $mobile-break-point) {
+    display: block;
+  }
+}
+
+button.uikit-btn {
+  @media (max-width: $mobile-break-point) {
+    display: block;
+    width: 100%;
+  }
+}

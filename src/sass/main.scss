@@ -2,58 +2,9 @@ $uikit-colour-Primary: #008752;
 $mobile-break-point:  640px;
 
 @import "uikit";
+
+@import "overrides";
 @import "table";
-
-.uikit-grid .container:before,
-.uikit-grid .container:after,
-.uikit-grid .container-fluid:before,
-.uikit-grid .container-fluid:after {
-  content: none;
-}
-
-.uikit-body {
-  p {
-    margin-bottom: 0.8em;
-  }
-}
-
-.uikit-header {
-  padding: 1.25em 0;
-  margin-bottom: 1em;
-}
-
-.uikit-fileupload input[type="file"] {
-  width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-a.uikit-btn {
-  color: #fff;
-
-  &:hover,
-  &:focus {
-    background-color: $uikit-colour-Primary--30;
-  }
-}
-
-.uikit-btn {
-  text-align: center;
-
-  @media (max-width: $mobile-break-point) {
-    display: block;
-  }
-}
-
-button.uikit-btn {
-  @media (max-width: $mobile-break-point) {
-    display: block;
-    width: 100%;
-  }
-}
 
 @media (max-width: $mobile-break-point) {
   .footer--fixed-bottom {
