@@ -1,0 +1,52 @@
+<h3>Upload files</h3>
+
+<div id="drop-zone">Drop files here</div>
+
+<input id="file-input" type="file" accept="image/*">
+
+<output id="file-list"></output>
+
+<script type="text/javascript">
+  function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    var files = evt.dataTransfer.files;
+		console.dir(files);
+
+    var output = [];
+		for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+          f.size, ' bytes, last modified: ',
+          f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+          '</li>');
+    }
+    document.getElementById('file-list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+
+	function handleDefaults(e) {
+    e.stopPropagation();
+    e.preventDefault();
+	}
+
+  function handleDragOver(e) {
+		handleDefaults(e);
+    evt.dataTransfer.dropEffect = 'copy';
+  }
+
+	function handleDragLeave(e) {
+		handleDefaults(e);
+	  this.style.borderColor = '#777';
+	}
+
+	function handleDragEnter(e) {
+		handleDefaults(e);
+	  this.style.borderColor = '#008752';
+	}
+
+  var dropZone = document.getElementById('drop-zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+  dropZone.addEventListener('dragleave', handleDragLeave, false);
+  dropZone.addEventListener('dragenter', handleDragEnter, false);
+</script>

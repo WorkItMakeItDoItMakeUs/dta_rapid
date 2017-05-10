@@ -1,0 +1,27 @@
+#drop-zone {
+  border: 2px dashed #777;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+}
+
+#file-list ul {
+  margin-top: 1.6em;
+}
+
+#file-input {
+	display: none;
+}
+
+@media (max-width: $mobile-break-point) {
+	#drop-zone {
+		display: none;
+	}
+
+	#file-input {
+		display: inline-block;
+	}
+
+}

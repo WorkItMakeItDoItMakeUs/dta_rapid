@@ -70,3 +70,5 @@ links:
 {% include buttons/upload-button.html id="upload_reciept" label="Upload reciept" %}
 
 {% include forms/item-table.html %}
+
+{% include forms/dropzone.html %}
