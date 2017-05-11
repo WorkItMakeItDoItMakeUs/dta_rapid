@@ -73,9 +73,9 @@ a.uikit-btn.uikit-btn--tertiary {
   }
 }
 
-.uikit-btn {
+input.uikit-btn,
+button.uikit-btn {
   @media (max-width: $mobile-break-point) {
-    display: block;
     width: 100%;
   }
 }
