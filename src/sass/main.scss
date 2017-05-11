@@ -8,6 +8,7 @@ $mobile-break-point:  640px;
 @import "table";
 @import "currency";
 @import "dropzone";
+@import "parsely";
 
 @media (max-width: $mobile-break-point) {
   .footer--fixed-bottom {
@@ -19,8 +20,4 @@ $mobile-break-point:  640px;
     right: 0;
     left: 0;
   }
-}
-
-.js-hidden {
-  display: none;
 }

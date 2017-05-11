@@ -18,9 +18,15 @@
   }
 }
 
+.uikit-text-input__label {
+  margin-bottom: uikit-space(0.125);
+}
+
 .uikit-header {
   padding: uikit-space(1) 0;
   margin-bottom: uikit-space(1);
+  text-align: center;
+  font-weight: bold;
 }
 
 .uikit-fileupload input[type="file"] {
