@@ -51,6 +51,10 @@ a.uikit-btn.uikit-btn--secondary {
   }
 }
 
+.uikit-text-input.invalid {
+  @extend .uikit-text-input--invalid;
+}
+
 a.uikit-btn.uikit-btn--tertiary {
   color: $uikit-colour-Text;
 
@@ -69,7 +73,7 @@ a.uikit-btn.uikit-btn--tertiary {
   }
 }
 
-button.uikit-btn {
+.uikit-btn {
   @media (max-width: $mobile-break-point) {
     display: block;
     width: 100%;

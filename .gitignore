@@ -8,3 +8,4 @@ Gemfile.lock
 node_modules
 npm-debug.log
 src/sass/uikit.scss
+pancake

@@ -2,7 +2,7 @@
 {% assign name=include.id %}
 
 {% if include.required %}
-  {% assign required="required" %}
+  {% assign required="data-parsley-required='true'" %}
 {% endif %}
 
 <p class="uikit-text-input__root {{ include.className | default: null }}">
