@@ -10,6 +10,7 @@ $mobile-break-point:  640px;
 @import "dropzone";
 @import "parsely";
 @import "search-list";
+@import "step-indicator";
 
 .footer--fixed-bottom {
   @media (max-width: $mobile-break-point) {

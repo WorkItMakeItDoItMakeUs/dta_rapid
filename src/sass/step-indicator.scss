@@ -1,0 +1,51 @@
+.step-indicator {
+  display: flex;
+  width: 100%;
+  margin: uikit-space(2) 0 uikit-space(1.5) !important;
+  list-style: none;
+  padding-left: 0 !important;
+  font-size: 65%;
+
+  > li {
+    position: relative;
+    text-align: center;
+    flex: 1;
+
+    &::after {
+      content: ' ';
+      border-top: 0.6em $uikit-colour-Border solid;
+      position: absolute;
+      display: block;
+      width: 100%;
+      left: -50%;
+      top: 0.75em;
+      z-index: 1;
+    }
+    &:first-child::after {
+      content: none;
+      display: none;
+    }
+    &.completed::after {
+      border-color: $uikit-colour-Primary;
+    }
+    &.completed .bubble {
+      border-color: $uikit-colour-Primary;
+      background: $uikit-colour-Primary;
+    }
+    .bubble {
+      position: relative;
+      box-sizing: border-box;
+      background: $uikit-colour-Background;
+      border: 0.6em $uikit-colour-Border solid;
+      border-radius: 100%;
+      display: block;
+      margin: 0 auto;
+      height: 2em;
+      width: 2em;
+      z-index: 4;
+    }
+  }
+  @media (min-width: 640px) {
+    font-size: 90%;
+  }
+}
