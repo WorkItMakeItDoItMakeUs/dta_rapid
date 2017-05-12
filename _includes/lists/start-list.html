@@ -1,0 +1,26 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  var listSearch = new List("search-list", {
+    valueNames: ['js-item-name']
+  });
+
+  $('#list-search-input').on('focus', function () {
+    $('.js-search-label').hide()
+  });
+
+  $('#list-search-input').on('blur', function () {
+    var filterValue = $('#list-search-input').val();
+    if (filterValue.trim() === "") { $('.js-search-label').show() }
+  });
+
+});
+</script>
+
+<div id="search-list">
+<div class="search-list--input-container">
+  <label class="search-list--input-label js-search-label" for="list-search-input">Search</label>
+  <div class="search-list--input-wrapper">
+    <input id="list-search-input" type="text" class="fuzzy-search uikit-text-input">
+  </div>
+</div>
+<ul class="uikit-keyword-list uikit-link-list list">
