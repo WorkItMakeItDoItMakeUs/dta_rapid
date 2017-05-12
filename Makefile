@@ -11,3 +11,6 @@ build:
 
 run: build
 	jekyll serve -w
+
+publish:
+	@./_build_scripts/publish_gem.sh
