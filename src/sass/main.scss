@@ -13,7 +13,7 @@ $mobile-break-point:  640px;
 
 .footer--fixed-bottom {
   @media (max-width: $mobile-break-point) {
-    position: absolute;
+    position: fixed;
     box-sizing: border-box;
     padding: 0.6em;
     width: 100%;
