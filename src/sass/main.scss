@@ -10,8 +10,8 @@ $mobile-break-point:  640px;
 @import "dropzone";
 @import "parsely";
 
-@media (max-width: $mobile-break-point) {
-  .footer--fixed-bottom {
+.footer--fixed-bottom {
+  @media (max-width: $mobile-break-point) {
     position: absolute;
     box-sizing: border-box;
     padding: 0.6em;
@@ -19,5 +19,40 @@ $mobile-break-point:  640px;
     bottom: 0;
     right: 0;
     left: 0;
+  }
+}
+
+.js-hidden {
+  display: none;
+}
+
+.mobile-hidden {
+  display: none;
+
+  @media (min-width: 769px) {
+    display: inherit;
+  }
+}
+
+.date-field {
+  &::-webkit-clear-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+  &::-webkit-datetime-edit-text {
+    color: $uikit-colour-Border;
+    padding: 0 uikit-space(0.5);
+  }
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field, {
+    text-transform: uppercase;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+  &::-webkit-calendar-picker-indicator {
+    padding: uikit-space(0.25);
+    background-color: transparent;
   }
 }

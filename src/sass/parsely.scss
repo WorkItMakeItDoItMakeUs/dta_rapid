@@ -18,18 +18,4 @@
 }
 
 .uikit-page-alerts {
-  transition: opacity 300ms ease-in-out;
-  opacity: 1;
-
-  &::after {
-
-  }
-  &.js-hidden {
-    transition: opacity 300ms ease-in-out;
-    opacity: 0;
-
-    &::after {
-
-    }
-  }
 }

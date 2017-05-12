@@ -16,7 +16,7 @@
         id="{{ question_slug }}__{{ option_slug }}"
         name="{{ question_slug }}"
         type="{{ include.type | default: 'radio' }}"
-        data-parsley-errors-container="#parent__{{ question_slug }}"
+        data-parsley-errors-container="#control-input__{{ question_slug }}"
         data-parsley-error-message="{{ include.validation_message }}"
         value="{{ question_slug }}__{{ option_slug }}">
         <span class="uikit-control-input__text">{{ option }}</span>

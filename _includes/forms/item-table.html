@@ -7,9 +7,16 @@
   </thead>
 
   <tbody>
-    {% include forms/item-row.html %}
-    {% include forms/item-row.html %}
-    {% include forms/item-row.html %}
+    <tr class="item-row">
+      <td data-label="Item number">
+        {% include forms/text-field.html pattern="[0-9]*" %}
+      </td>
+
+
+      <td data-label="Amount">
+        {% include forms/text-field.html placeholder="$" pattern="[0-9]*" type="number" step="0.01" %}
+      </td>
+    </tr>
   </tbody>
 </table>
 

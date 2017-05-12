@@ -6,12 +6,18 @@
 }
 
 .uikit-body {
+
   p {
     margin-bottom: uikit-space(0.5);
     max-width: none;
   }
-  h2 {
+  h3 {
     margin: uikit-space(1.125) 0 uikit-space(0.5);
+    letter-spacing: -0.05em;
+
+    &:first-of-type {
+      margin: uikit-space(0.5) 0 uikit-space(0.5);
+    }
   }
   .uikit-text-input {
     padding: uikit-space(0.5) uikit-space(0.25);
@@ -19,7 +25,7 @@
 }
 
 .uikit-text-input__label {
-  margin-bottom: uikit-space(0.125);
+  margin-bottom: uikit-space(0.5);
 }
 
 .uikit-header {
@@ -77,6 +83,10 @@ a.uikit-btn.uikit-btn--tertiary {
   @media (max-width: $mobile-break-point) {
     display: block;
   }
+}
+
+.uikit-control-input {
+  display: block;
 }
 
 input.uikit-btn,
