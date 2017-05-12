@@ -1,7 +1,7 @@
 <!-- TODO: good date fields -->
 
 <div class="text-field">
-  <label class="uikit-text-input__label" for="{{ include.id }}">{{ include.label }}</label>
+  {% if include.label %}<label class="uikit-text-input__label" for="{{ include.id }}">{{ include.label }}</label>{% endif %}
   <input
      class="uikit-text-input uikit-text-input--block date-field"
      type="date"

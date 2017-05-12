@@ -6,10 +6,12 @@
 }
 
 .uikit-body {
-
   p {
     margin-bottom: uikit-space(0.5);
     max-width: none;
+  }
+  h1 {
+    line-height: 1.25;
   }
   h3 {
     margin: uikit-space(1.125) 0 uikit-space(0.5);
@@ -29,10 +31,13 @@
 }
 
 .uikit-header {
-  padding: uikit-space(1) 0;
-  margin-bottom: uikit-space(1);
-  text-align: center;
+  margin-bottom: 0;
   font-weight: bold;
+}
+
+.uikit-header--light {
+  padding: uikit-space(0.5) 0;
+  text-align: center;
 }
 
 .uikit-fileupload input[type="file"] {
