@@ -13,7 +13,7 @@
 
     &::after {
       content: ' ';
-      border-top: 0.6em $uikit-colour-Border solid;
+      border-top: 0.6em $uikit-colour-Border-30 solid;
       position: absolute;
       display: block;
       width: 100%;
@@ -36,7 +36,7 @@
       position: relative;
       box-sizing: border-box;
       background: $uikit-colour-Background;
-      border: 0.6em $uikit-colour-Border solid;
+      border: 0.6em $uikit-colour-Border-30 solid;
       border-radius: 100%;
       display: block;
       margin: 0 auto;
