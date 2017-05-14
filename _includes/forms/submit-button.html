@@ -1,1 +1,1 @@
-<input class="uikit-btn uikit-btn--primary" type="submit" value="{{ include.text | Submit }}">
+<input class="uikit-btn uikit-btn--primary" type="submit" value="{{ include.text | Submit }}" {% if include.onclick %}onclick="{{ include.onclick }}"{% endif %}>
