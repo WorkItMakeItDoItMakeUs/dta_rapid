@@ -7,5 +7,18 @@
      name="{{ include.id }}"
      {% if include.required %}data-parsley-required{% endif %}
      {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
-     >
+     {% if include.pattern %}data-parsley-pattern="{{ include.pattern }}"{% endif %}
+     {% if include.past_date %}data-parsley-past-date{% endif %}
+   >
 </p>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    window.Parsley.addValidator('pastDate', {
+      validateString: function(value) { return new Date() > new Date(value) },
+      messages: {
+        en: 'Please enter a date in the past',
+      }
+    });
+  });
+</script>
