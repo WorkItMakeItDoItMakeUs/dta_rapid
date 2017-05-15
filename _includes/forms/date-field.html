@@ -1,6 +1,4 @@
-<!-- TODO: good date fields -->
-
-<div class="text-field">
+<p class="uikit-text-input__root {{ include.className | default: null }}">
   {% if include.label %}<label class="uikit-text-input__label" for="{{ include.id }}">{{ include.label }}</label>{% endif %}
   <input
      class="uikit-text-input uikit-text-input--block date-field"
@@ -10,4 +8,4 @@
      {% if include.required %}data-parsley-required{% endif %}
      {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
      >
-</div>
+</p>

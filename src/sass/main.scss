@@ -12,8 +12,13 @@ $mobile-break-point:  640px;
 @import "search-list";
 @import "step-indicator";
 
+@media (min-width: 320px) {
+  body {
+    font-size: 90%;
+  }
+}
 .footer--fixed-bottom {
-  @media (max-width: $mobile-break-point) {
+  @media (max-width: $mobile-break-point) and (min-height: 666px) {
     position: fixed;
     box-sizing: border-box;
     padding: 0.6em;
@@ -37,24 +42,28 @@ $mobile-break-point:  640px;
 }
 
 .date-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+
   &::-webkit-clear-button {
     display: none;
     -webkit-appearance: none;
   }
   &::-webkit-datetime-edit-text {
     color: $uikit-colour-Border;
-    padding: 0 uikit-space(0.5);
+    padding: 0 uikit-space(0.125);
   }
   &::-webkit-datetime-edit-month-field,
   &::-webkit-datetime-edit-day-field,
   &::-webkit-datetime-edit-year-field, {
     text-transform: uppercase;
+    padding: 0;
   }
   &::-webkit-inner-spin-button {
     display: none;
   }
   &::-webkit-calendar-picker-indicator {
-    padding: uikit-space(0.25);
     background-color: transparent;
   }
 }

@@ -8,20 +8,13 @@
   </thead>
 
   <tbody>
+    {% for i in (1..3) %}
     <tr class="item-row">
-      <td data-label="Amount">
-        {% include forms/date-field.html %}
-      </td>
-
-      <td data-label="Item number">
-        {% include forms/text-field.html pattern="[0-9]*" %}
-      </td>
-
-
-      <td data-label="Amount">
-        {% include forms/text-field.html placeholder="$" pattern="[0-9]*" type="number" step="0.01" %}
-      </td>
+      <td data-label="Date">{% include forms/date-field.html %}</td>
+      <td data-label="Item number">{% include forms/text-field.html pattern="[0-9]*" %}</td>
+      <td data-label="Amount">{% include forms/text-field.html placeholder="$" pattern="[0-9]*" type="number" step="0.01" %}</td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 
