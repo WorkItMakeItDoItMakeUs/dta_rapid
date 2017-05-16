@@ -10,3 +10,30 @@
   padding-left: 0.6em;
 }
 
+.search-list__list {
+  list-style: none;
+  font-size: 125%;
+  padding-left: 0 !important;
+}
+.search-list__item {
+  padding: uikit-space(0.75) 0;
+  border-bottom: 1px $uikit-colour-Border-50 solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 !important;
+
+  &:last-child {
+    border: none;
+  }
+  a {
+    border-bottom: none;
+    flex: 9;
+  }
+  &::after {
+    content: "→";
+    flex: 1 uikit-space(0.5);
+    text-align: center;
+    color: $uikit-colour-Primary;
+  }
+}
