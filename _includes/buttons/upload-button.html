@@ -6,6 +6,29 @@
 </p>
 
 <script>
+  function formatBytes(bytes,decimals) {
+     if (bytes == 0) return '0 Bytes';
+     var k = 1000,
+         dm = decimals || 2,
+         sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+         i = Math.floor(Math.log(bytes) / Math.log(k));
+     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  }
+
+  function saveFileData(files) {
+    var fileData = Array.prototype.map.call(files, function(file) {
+      var [name, ext] = file.name.split('.');
+
+      return {
+        name: name,
+        ext: ext,
+        size: formatBytes(file.size)
+      };
+    });
+
+    localStorage.setItem('form.files', JSON.stringify(fileData));
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('.uikit-fileupload input'), function(input) {
     var label	= input.nextElementSibling;
     var labelVal = label.innerHTML;
@@ -22,6 +45,8 @@
         label.querySelector('span').innerHTML = fileName;
       else
         label.innerHTML = labelVal;
+
+      saveFileData(this.files);
     });
   });
 </script>
