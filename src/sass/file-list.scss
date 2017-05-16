@@ -1,0 +1,35 @@
+.file-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+.file-list__item {
+  padding: uikit-space(0.5) 0;
+  border-bottom: 1px $uikit-colour-Border-50 solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.file-list__icon {
+  background: url('https://cdn4.iconfinder.com/data/icons/48-bubbles/48/12.File-512.png') no-repeat left center;
+  background-size: contain;
+  height: uikit-space(2);
+  max-width: uikit-space(2);
+  padding: 0 uikit-space(0.25) 0 0;
+  flex: 1 1;
+}
+.file-list__info {
+  flex: 3;
+}
+.file-list__name {
+  font-size: 125%;
+  margin: 0;
+}
+.file-list__size {
+  flex: 1;
+  text-align: right;
+  color: $uikit-colour-Primary;
+}
+.file-list__type {
+  text-transform: uppercase;
+  color: $uikit-colour-Border-50;
+}
