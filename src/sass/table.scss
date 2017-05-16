@@ -27,3 +27,44 @@
     }
   }
 }
+
+.item-table-form {
+  @media screen and (max-width: $mobile-break-point) {
+    border: 0;
+
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px 0;
+      border-bottom: 1px $uikit-colour-Border-70 solid;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      display: flex;
+      flex-direction: row;
+      text-align: right;
+      align-items: center;
+    }
+
+    .uikit-text-input__root {
+      flex: 3;
+    }
+
+    td::before {
+      margin-bottom: .8em;
+      content: attr(data-label);
+      flex: 2;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}

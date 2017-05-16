@@ -67,3 +67,24 @@ $mobile-break-point:  640px;
     background-color: transparent;
   }
 }
+
+.uikit-body {
+  dl {
+    dt {
+      display: block;
+      text-transform: uppercase;
+      font-size: 80%;
+      color: $uikit-colour-Border-70;
+    }
+    dd {
+      display: block;
+      padding-left: 0;
+    }
+  }
+}
+
+.item-table {
+  th:first-letter {
+    text-transform: uppercase;
+  }
+}
