@@ -9,18 +9,19 @@
 
   <tbody>
     {% for i in (1..3) %}
-    <tr class="item-row" data-label="Service Item">
+    {% capture group_number %}item-group-{{i}}{% endcapture %}
+    <tr class="item-row"  data-label="Service Item" data-parsley-item-row="true" data-parsley-validate-if-empty="" >
       <td data-label="Date">
         {% include forms/date-field.html
-          required="true"
           past_date="true"
+          parsley_group=group_number
         %}
       </td>
 
       <td data-label="Item number">
         {% include forms/text-field.html
           pattern="[0-9]*"
-          required="true"
+          parsley_group=group_number
         %}
       </td>
 
@@ -29,7 +30,7 @@
           pattern="[0-9]*"
           type="number"
           step="0.01"
-          required="true"
+          parsley_group=group_number
         %}
       </td>
     </tr>
@@ -54,4 +55,22 @@
 
     xhr.send();
   }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    window.Parsley.addValidator('itemRow', {
+      validateString: function(value, requirement, instance) {
+        var cells = instance.element.querySelectorAll('input');
+        var isFilledIn = Array.prototype.some.call(cells, function(cell) { return cell.value ? true : false });
+        var group = cells[0].dataset.parsleyGroup;
+
+        if (isFilledIn) {
+          return instance.parent.validate({group: group, force: true});
+        }
+        return true;
+      },
+      messages: {
+        en: 'Please enter all fields for this row',
+      }
+    });
+  });
 </script>

@@ -26,6 +26,7 @@
     {% if include.list %}list="{{ include.list }}"{% endif %}
     {% if include.pattern %}data-parsley-pattern="{{ include.pattern }}" pattern="{{ include.pattern }}"{% endif %}
     {% if include.validation_message %}data-parsley-error-message="{{ include.validation_message }}"{% endif %}
+     {% if include.parsley_group %}data-parsley-group="{{ include.parsley_group }}"{% endif %}
   />
   {% if include.description %}
     <p class="uikit-text-input__description">{{ include.description }}</p>
