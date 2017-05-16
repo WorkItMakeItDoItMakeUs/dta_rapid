@@ -20,7 +20,7 @@
 
       <td data-label="Item number">
         {% include forms/text-field.html
-          pattern="[0-9]*"
+          pattern="^\d{1,5}$"
           parsley_group=group_number
         %}
       </td>
