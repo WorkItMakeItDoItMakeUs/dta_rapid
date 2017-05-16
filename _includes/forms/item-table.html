@@ -27,7 +27,7 @@
 
       <td data-label="Amount">
         {% include forms/text-field.html placeholder="$"
-          pattern="[0-9]*"
+          pattern="^\d+\.?(\d{1,2})?"
           type="number"
           step="0.01"
           parsley_group=group_number
