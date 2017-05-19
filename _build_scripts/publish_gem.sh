@@ -29,14 +29,19 @@ show_menu() {
 handle_option() {
   case "$1" in
     major|1)
-      echo 'new Major'
+      ((major_version++))
+      new_version="${major_version}.${minor_version}.${patch_version}"
+      release_new_version $new_version
       ;;
     minor|2)
-      echo 'new Minor'
+      ((minor_version++))
+      new_version="${major_version}.${minor_version}.${patch_version}"
+      release_new_version $new_version
       ;;
     patch|3)
-      echo 'Releasing new Patch version'
-      
+      ((patch_version++))
+      new_version="${major_version}.${minor_version}.${patch_version}"
+      release_new_version $new_version
       ;;
     *)
       echo Invalid Option!
@@ -45,10 +50,16 @@ handle_option() {
   esac
 }
 
+release_new_version() {
+  echo "Releasing new version: ${1}"
+  #`sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
+  #`git commit -am "Update patch version"`
+  #`git pull --rebase`
+  #`git push`
+  #`gem build dta_rapid.gemspec`
+  #`gem push dta_rapid-$1.gem`
+}
+
 ascertain_version
 show_menu
 handle_option $REPLY
-
-#commit update to gemspec
-#gem build dta_rapid.gemspec
-#gem push dta_rapid-$VERSION.gem
