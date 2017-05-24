@@ -50,14 +50,32 @@ handle_option() {
   esac
 }
 
-release_new_version() {
-  echo "Releasing new version: ${1}"
+release_commands() {
   `sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
-  `git commit -am "Update gem version"`
-  `git pull --rebase`
+  #`git commit -am "Update gem version"`
+  #`git pull --rebase`
   #`git push`
   #`gem build dta_rapid.gemspec`
   #`gem push dta_rapid-$1.gem`
+}
+
+release_new_version() {
+  echo
+  echo "Current version: ${version}"
+  echo "    New version: ${1}"
+  echo
+  read -p "Do you wish to proceed? (Y/n): " REPLY </dev/tty
+
+  case "$1" in
+    Y)
+      "New release immanent for version: ${1}"
+      release_commands $1
+      ;;
+    n)
+      "Back away not today, disco lady"
+      exit 1
+      ;;
+  esac
 }
 
 ascertain_version
