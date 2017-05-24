@@ -18,6 +18,7 @@ links:
     href: '#control-inputs'
   - text: 'Navigation'
     href: '#navigation'
+
 ---
 
 # Examples
@@ -72,3 +73,17 @@ links:
 {% include forms/item-table.html %}
 
 {% include forms/dropzone.html %}
+
+{% include lists/suggestion-search.html placeholder="Some placeholder..." %}
+
+&nbsp;
+
+<script type="text/javascript">
+  var items = [
+    'Make a Claim',
+    'Understand SafetyNet',
+    'Update my bank details'
+  ];
+
+  localStorage.setItem('items', JSON.stringify(items));
+</script>
