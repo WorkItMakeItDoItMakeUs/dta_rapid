@@ -13,7 +13,10 @@
     <main class="uikit-grid">
       {% include navigation/header.html %}
       <header class="uikit-header uikit-header--gradient">
-        <div class="container">{{ page.hero }}</div>
+        <div class="container">
+          <h2>What would you like help with today?</h2>
+          {% include lists/suggestion-search.html placeholder="Search (e.g. Make a claim)" %}
+        </div>
       </header>
       <div class="container">{{ content }}</div>
       <footer class="uikit-footer"><div class="container">{{ page.footer }}</div></footer>

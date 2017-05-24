@@ -1,18 +1,21 @@
 <div id="suggestion-search">
-  <input class="typeahead" type="text" placeholder="{{ include.placeholder }}">
+  <input
+    class="uikit-text-input uikit-text-input--block search-input"
+    placeholder="{{ include.placeholder }}"
+    type="text">
 </div>
 
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(e) {
-    var items = JSON.parse(localStorage.getItem('items'));
+    var searchResults = JSON.parse(localStorage.getItem('searchResults'));
 
     var data = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      local: items
+      local: searchResults
     });
 
-    $('#suggestion-search .typeahead').typeahead({
+    $('#suggestion-search .search-input').typeahead({
       hint: true,
       highlight: true,
       minLength: 1
