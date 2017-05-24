@@ -1,7 +1,7 @@
 <p>
   <div class="uikit-fileupload">
     <input id="{{ include.id }}" type="file" role="button" multiple/>
-    <label class="uikit-btn uikit-btn--tertiary" for="{{ include.id }}"><span>{{ include.label }}</span></label>
+    <label class="uikit-btn" for="{{ include.id }}"><span>{{ include.label }}</span></label>
   </div>
 </p>
 
@@ -46,7 +46,10 @@
       else
         label.innerHTML = labelVal;
 
+      label.classList.add("uikit-btn--tertiary")
+
       saveFileData(this.files);
+      document.getElementById('nextButton').classList.remove("uikit-btn--tertiary");
     });
   });
 </script>
