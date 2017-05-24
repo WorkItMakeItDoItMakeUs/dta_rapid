@@ -1,0 +1,58 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  $("#feedback-yes").on("click", function (event) {
+    event.preventDefault();
+    $(".js-feedback-buttons").hide();
+    $(".js-feedback-positive").show();
+  });
+
+  $("#feedback-no").on("click", function (event) {
+    event.preventDefault();
+    $(".js-feedback-buttons").hide();
+    $(".js-feedback-negative").show();
+  });
+
+  $('#comment-form').on("submit", function (event) {
+    event.preventDefault();
+    $(".js-feedback-negative").hide();
+    $(".js-feedback-comment").show();
+  });
+});
+</script>
+
+<div class="feedback-widget">
+  <h3>Help us improve our services</h3>
+  <p class="feedback-widget__question">Did this page answer your question?</p>
+  <div class="feedback-widget__inner">
+    <div class="feedback-widget__button-container js-feedback-buttons">
+      <button type="submit" id="feedback-yes" class="feeback-widget__yes">Yes</button>
+      <button type="submit" id="feedback-no" class="feedback-widget__no">No</button>
+    </div>
+    <div class="feedback-widget__positive js-feedback-positive js-hidden">
+      <p>We're glad. Thanks!</p>
+    </div>
+    <div class="feedback-widget_negative js-feedback-negative js-hidden">
+      <form id="comment-form">
+        <p>Sorry to hear that, could you provide us with some more information?</p>
+        <p>
+        <label class="uikit-control-input">
+          <input class="uikit-control-input__input" type="radio" name="1">
+          <span class="uikit-control-input__text">Input 1</span>
+        </label>
+        </p>
+        <p>
+        <label class="uikit-control-input">
+          <input class="uikit-control-input__input" type="radio" name="1">
+          <span class="uikit-control-input__text">Input 2</span>
+        </label>
+        </p>
+        <input type="submit">
+      </form>
+    </div>
+    <div class="js-feedback-comment js-hidden">
+      <p>Thanks for your feedback. We are always working to improve our services.</p>
+    </div>
+  </div>
+</div>
+

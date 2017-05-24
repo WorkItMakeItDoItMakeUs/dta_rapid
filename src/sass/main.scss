@@ -13,6 +13,7 @@ $mobile-break-point:  640px;
 @import "file-list";
 @import "step-indicator";
 @import "inline-cta-link";
+@import "feedback-widget";
 
 @media (min-width: 320px) {
   body {
