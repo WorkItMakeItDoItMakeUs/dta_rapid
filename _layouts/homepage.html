@@ -10,10 +10,8 @@
 
   <body class="uikit-body">
     <main class="uikit-grid">
-      <header class="uikit-header uikit-header--dark uikit-header--thin">
-        <div class="container">Header</div>
-      </header>
-      <header class="uikit-header">
+      {% include navigation/header.html %}
+      <header class="uikit-header uikit-header--gradient">
         <div class="container">{{ page.hero }}</div>
       </header>
       <div class="container">{{ content }}</div>

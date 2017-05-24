@@ -34,11 +34,21 @@
   margin-bottom: uikit-space(0.5);
 }
 
+@media (min-width: 1024px) {
+  .uikit-header {
+    padding: 7.25% 0;
+  }
+}
+
 .uikit-header--thin {
   margin-bottom: 0;
   font-weight: bold;
   padding: uikit-space(0.5) 0;
   text-align: center;
+}
+
+.uikit-header--gradient {
+  background-image: linear-gradient(-45deg, rgba(0,122,69,1) 50%, rgba(253,198,0,1) 150%);
 }
 
 .uikit-fileupload input[type="file"] {
@@ -81,6 +91,12 @@ a.uikit-btn.uikit-btn--tertiary {
     background-color: $uikit-colour-Primary-10;
     border: 1px solid $uikit-colour-Primary;
   }
+}
+
+.uikit-footer {
+  margin-top: uikit-space(1);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .uikit-btn {
