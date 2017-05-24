@@ -52,9 +52,9 @@ handle_option() {
 
 release_new_version() {
   echo "Releasing new version: ${1}"
-  #`sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
-  #`git commit -am "Update patch version"`
-  #`git pull --rebase`
+  `sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
+  `git commit -am "Update gem version"`
+  `git pull --rebase`
   #`git push`
   #`gem build dta_rapid.gemspec`
   #`gem push dta_rapid-$1.gem`
