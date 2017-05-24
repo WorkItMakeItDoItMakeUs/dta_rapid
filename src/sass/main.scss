@@ -12,6 +12,7 @@ $mobile-break-point:  640px;
 @import "search-list";
 @import "file-list";
 @import "step-indicator";
+@import "inline-cta-link";
 
 @media (min-width: 320px) {
   body {
