@@ -76,6 +76,11 @@ links:
 
 {% include lists/suggestion-search.html placeholder="Some placeholder..." %}
 
+## Widgets
+
+{% include widgets/was-this-helpful.html %}
+
+
 &nbsp;
 
 <script type="text/javascript">

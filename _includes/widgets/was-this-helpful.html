@@ -22,36 +22,53 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <div class="feedback-widget">
-  <h3>Help us improve our services</h3>
-  <p class="feedback-widget__question">Did this page answer your question?</p>
+  <h3>Did this page answer your question?</h3>
   <div class="feedback-widget__inner">
     <div class="feedback-widget__button-container js-feedback-buttons">
-      <button type="submit" id="feedback-yes" class="feeback-widget__yes">Yes</button>
-      <button type="submit" id="feedback-no" class="feedback-widget__no">No</button>
+      <button id="feedback-yes" class="feedback-widget__yes">Yes</button>
+      <button id="feedback-no" class="feedback-widget__no">No</button>
     </div>
     <div class="feedback-widget__positive js-feedback-positive js-hidden">
-      <p>We're glad. Thanks!</p>
+      <picture class="feedback-widget__tick">
+      <img width="76" src="/assets/media/green.svg">
+      </picture>
+      <p class="feedback-widget__follow-up">Thanks! We are always working to improve our services.</p>
     </div>
-    <div class="feedback-widget_negative js-feedback-negative js-hidden">
+    <div class="feedback-widget__feedback js-feedback-negative js-hidden">
       <form id="comment-form">
-        <p>Sorry to hear that, could you provide us with some more information?</p>
+        <p class="feedback-widget__follow-up">Sorry to hear that. What went wrong?</p>
         <p>
-        <label class="uikit-control-input">
-          <input class="uikit-control-input__input" type="radio" name="1">
-          <span class="uikit-control-input__text">Input 1</span>
+        <label for="did-not-find" class="uikit-control-input">
+          <input id="did-not-find" class="uikit-control-input__input" type="checkbox" name="did-not-find">
+          <span class="uikit-control-input__text">I didn't find what I was looking for</span>
         </label>
         </p>
         <p>
-        <label class="uikit-control-input">
-          <input class="uikit-control-input__input" type="radio" name="1">
-          <span class="uikit-control-input__text">Input 2</span>
+        <label class="uikit-control-input" for="confusing">
+          <input id="confusing" class="uikit-control-input__input" type="checkbox" name="confusing">
+          <span class="uikit-control-input__text">I found the information on this page confusing</span>
         </label>
         </p>
-        <input type="submit">
+        <p>
+        <label for="too-long-to-find" class="uikit-control-input">
+          <input id="too-long-to-find" class="uikit-control-input__input" type="checkbox" name="too-long-to-find">
+          <span class="uikit-control-input__text">It took me too long to find the answer to my question</span>
+        </label>
+        </p>
+        <p>
+        <label for="broken" class="uikit-control-input">
+          <input id="broken" class="uikit-control-input__input" type="checkbox" name="broken">
+          <span class="uikit-control-input__text">Something on the page is broken</span>
+        </label>
+        </p>
+        <input type="submit" class="uikit-btn" value="Send Feedback">
       </form>
     </div>
     <div class="js-feedback-comment js-hidden">
-      <p>Thanks for your feedback. We are always working to improve our services.</p>
+      <picture class="feedback-widget__tick">
+      <img width="76" src="/assets/media/green.svg">
+      </picture>
+      <p class="feedback-widget__follow-up">Thanks for your feedback. We are always working to improve our services.</p>
     </div>
   </div>
 </div>
