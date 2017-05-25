@@ -64,6 +64,8 @@ release_commands() {
   git push
   gem build dta_rapid.gemspec
   gem push dta_rapid-$1.gem
+  echo
+  echo 'Finito!'
 }
 
 release_new_version() {
