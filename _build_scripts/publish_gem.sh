@@ -63,7 +63,7 @@ release_commands() {
   git pull --rebase
   git push
   gem build dta_rapid.gemspec
-  `gem push dta_rapid-$1.gem`
+  gem push dta_rapid-$1.gem
 }
 
 release_new_version() {
