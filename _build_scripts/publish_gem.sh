@@ -11,6 +11,13 @@ ascertain_version() {
 	patch_version=${version_array[2]}
 }
 
+check_local_changes() {
+  if [[ `git status --porcelain` ]]; then
+    echo "Local changes found, please commit or clear before proceeding"
+    exit 1
+  fi
+}
+
 show_menu() {
   echo 'Current gem version: ' $version
   echo
@@ -52,11 +59,11 @@ handle_option() {
 
 release_commands() {
   `sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
-  #`git commit -am "Update gem version"`
-  #`git pull --rebase`
-  #`git push`
-  #`gem build dta_rapid.gemspec`
-  #`gem push dta_rapid-$1.gem`
+  `git commit -am "Update gem version"`
+  `git pull --rebase`
+  `git push`
+  `gem build dta_rapid.gemspec`
+  `gem push dta_rapid-$1.gem`
 }
 
 release_new_version() {
@@ -64,20 +71,21 @@ release_new_version() {
   echo "Current version: ${version}"
   echo "    New version: ${1}"
   echo
-  read -p "Do you wish to proceed? (Y/n): " REPLY </dev/tty
+  read -p "Do you wish to proceed? (Y/n): " CONF_REPLY </dev/tty
 
-  case "$1" in
+  case "$CONF_REPLY" in
     Y)
-      "New release immanent for version: ${1}"
+      echo "New release immanent for version: ${1}"
       release_commands $1
       ;;
     n)
-      "Back away not today, disco lady"
+      echo "Back away not today, disco lady"
       exit 1
       ;;
   esac
 }
 
+check_local_changes
 ascertain_version
 show_menu
 handle_option $REPLY
