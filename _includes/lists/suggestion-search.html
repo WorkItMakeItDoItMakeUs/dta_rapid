@@ -8,14 +8,15 @@
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(e) {
     var data = new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('shortDescription'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       local: searchResults
     });
 
     $('#suggestion-search .search-input').typeahead({
       classNames: {
-        wrapper: 'search-input-wrapper'
+        wrapper: 'search-input-wrapper',
+        menu: 'suggestion-search-menu'
       },
       hint: true,
       highlight: true,
@@ -24,6 +25,12 @@
     {
       name: 'data',
       source: data,
+      display: 'value',
+      templates: {
+        suggestion: function(result) {
+          return `<div class="search-list__item"><a href="${result.link}">${result.shortDescription}</a></div>`;
+        },
+      }
     });
   });
 </script>
