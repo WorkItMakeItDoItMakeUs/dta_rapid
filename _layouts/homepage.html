@@ -12,12 +12,14 @@
   <body class="uikit-body">
     <main class="uikit-grid">
       {% include navigation/header.html %}
-      <header class="uikit-header uikit-header--gradient">
-        <div class="container">
-          <h2>What would you like help with today?</h2>
-          {% include lists/suggestion-search.html placeholder="Search (e.g. Make a claim)" %}
-        </div>
-      </header>
+      {% if page.search %}
+        <header class="uikit-header uikit-header--gradient">
+          <div class="container">
+            <h2>What would you like help with today?</h2>
+            {% include lists/suggestion-search.html placeholder="Search (e.g. Make a claim)" %}
+          </div>
+        </header>
+      {% endif %}
       <div class="container">{{ content }}</div>
       <footer class="uikit-footer"><div class="container">{{ page.footer }}</div></footer>
     </main>

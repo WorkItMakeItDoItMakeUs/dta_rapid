@@ -9,6 +9,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
+.uikit-card {
+  display: block;
+  font-size: 120%;
+  border-bottom: none !important;
+  padding: uikit-space(0.5);
+  text-align: center;
+  background-color: $uikit-colour-Background;
+
+  &:hover {
+    background-color: inherit !important;
+  }
+}
+
 .uikit-body {
   p {
     margin-bottom: uikit-space(0.5);

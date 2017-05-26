@@ -1,5 +1,5 @@
 .feedback-widget {
-  margin-top: 4em;
+  margin-top: uikit-space(4);
 }
 
 .feedback-widget__yes,
@@ -8,30 +8,29 @@
   display: inline-block;
   border: none;
   background: none;
-  font-size: 17px;
   font-weight: bold;
   color: white;
   border-radius: 3px;
   cursor: pointer;
   transition: background 0.1s ease;
-  background-color: #008752;
+  background-color: $uikit-colour-Primary;
+  padding: uikit-space(0.5) uikit-space(1);
 }
 
 .feedback-widget__inner {
 }
 
 .feedback-widget__follow-up {
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: 125%;
 }
 
 .feedback-widget__action-container {
-  border-left: 3px solid #008752;
-  padding-left: 0.6em;
+  border-left: 3px solid $uikit-colour-Primary;
+  padding-left: uikit-space(0.5);
 }
 
 .feedback-widget__tick {
   display: block;
   text-align: center;
-  margin: 1em;
+  margin: uikit-space(1);
 }
