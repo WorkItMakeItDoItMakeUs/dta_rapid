@@ -84,7 +84,13 @@
   background-color: rgba(255, 197, 34, 0.5);
 }
 
-.suggestion-search-item__highlighted {
-  background-color: $uikit-colour-Secondary;
-  color: white;
+.suggestion-search__item--highlighted {
+  .suggestion-search__link {
+    background-color: $uikit-colour-Secondary;
+    color: white;
+
+    &::after {
+      color: white;
+    }
+  }
 }
