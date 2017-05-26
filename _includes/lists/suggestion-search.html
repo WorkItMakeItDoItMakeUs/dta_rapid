@@ -1,6 +1,6 @@
-<div id="suggestion-search">
+<div id="suggestion-search" class="suggestion-search">
   <input
-    class="uikit-text-input uikit-text-input--block search-input"
+    class="uikit-text-input uikit-text-input--block suggestion-search__input"
     placeholder="{{ include.placeholder }}"
     type="text">
 </div>
@@ -17,10 +17,10 @@
       local: searchResults
     });
 
-    $('#suggestion-search .search-input').typeahead({
+    $('.suggestion-search__input').typeahead({
       classNames: {
-        wrapper: 'search-input-wrapper',
-        menu: 'suggestion-search-menu',
+        wrapper: 'suggestion-search__root',
+        menu: 'suggestion-search__menu'
         cursor: 'suggestion-search-item__highlighted'
       },
       hint: true,
@@ -31,9 +31,10 @@
       name: 'data',
       source: data,
       display: 'shortDescription',
+      limit: 5,
       templates: {
         suggestion: function(result) {
-          return `<div class="search-list__item"><a href="${result.link}">${result.shortDescription}</a></div>`;
+          return `<div role="option" aria-selected="false" class="suggestion-search__item"><a class="suggestion-search__link" href="${result.link}">${result.shortDescription}</a></div>`;
         },
       }
     });
