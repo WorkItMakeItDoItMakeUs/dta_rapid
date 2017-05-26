@@ -1,7 +1,11 @@
-<div id="suggestion-search" class="suggestion-search">
+<div class="suggestion-search">
+  <label class="suggestion-search__icon" for="suggestion-search">
+    <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 12 12"><g class="suggestion-search__svg" stroke-width="2" fill="none"><path d="M11.29 11.71l-4-4"/><circle cx="5" cy="5" r="4"/></g></svg>
+  </label>
   <input
     class="uikit-text-input uikit-text-input--block suggestion-search__input"
     placeholder="{{ include.placeholder }}"
+    id="suggestion-search"
     type="text">
 </div>
 
@@ -39,7 +43,7 @@
       }
     });
 
-    $('#suggestion-search .search-input').bind('typeahead:select', function(e, suggestion) {
+    $('.suggestion-search__input').bind('typeahead:select', function(e, suggestion) {
       window.location.href = suggestion.link;
     });
   });

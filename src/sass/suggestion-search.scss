@@ -1,13 +1,32 @@
 .suggestion-search__input {
   font-size: 125%;
+  padding-left: 3rem !important;
 }
 
 .suggestion-search {
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .suggestion-search__root {
   width: 100%;
+}
+
+.suggestion-search__icon {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  z-index: 10;
+  padding: uikit-space(0.5);
+
+  .suggestion-search__svg {
+    stroke: $uikit-colour-Border;
+  }
 }
 
 .suggestion-search__menu {
@@ -66,5 +85,6 @@
 }
 
 .suggestion-search-item__highlighted {
-  background-color: $uikit-colour-Link;
+  background-color: $uikit-colour-Secondary;
+  color: white;
 }
