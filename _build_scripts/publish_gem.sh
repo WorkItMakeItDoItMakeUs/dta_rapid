@@ -59,7 +59,7 @@ handle_option() {
 
 release_commands() {
   `sed -i '' "s/\(.*version.*\)\"\(.*\)\"/\1\"${1}\"/g" dta_rapid.gemspec`
-  git commit -am "Update gem version"
+  git commit -am "Update gem version to ${1}"
   git pull --rebase
   git push
   gem build dta_rapid.gemspec
