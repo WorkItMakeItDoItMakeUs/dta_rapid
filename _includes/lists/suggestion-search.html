@@ -37,5 +37,9 @@
         },
       }
     });
+
+    $('#suggestion-search .search-input').bind('typeahead:select', function(e, suggestion) {
+      window.location.href = suggestion.link;
+    });
   });
 </script>
