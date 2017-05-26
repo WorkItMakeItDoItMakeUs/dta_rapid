@@ -8,7 +8,7 @@
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(e) {
     var data = new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('shortDescription'),
+      datumTokenizer: function(obj) { return obj.tokens },
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       local: searchResults
     });
