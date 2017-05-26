@@ -18,8 +18,21 @@ check_local_changes() {
   fi
 }
 
+check_remote_version() {
+  remote_version=`gem query -r dta_rapid | sed -n 's/.*dta_rapid.*(\(.*\))/\1/p'`
+
+  echo
+  echo '   Current gem version: ' $version
+  echo 'Current remote version: ' $remote_version
+
+  if [[ $remote_version != $version ]]; then
+    echo "Your current local version seems to be behind the latest remote"
+    echo "Please update before continuing"
+    exit 1
+  fi
+}
+
 show_menu() {
-  echo 'Current gem version: ' $version
   echo
   echo Publish new version of gem
   echo ==========================
@@ -89,5 +102,6 @@ release_new_version() {
 
 check_local_changes
 ascertain_version
+check_remote_version
 show_menu
 handle_option $REPLY
