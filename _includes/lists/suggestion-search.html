@@ -11,15 +11,29 @@
 
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(e) {
-    var getSearchTermsFromTokensAndDescription = function(obj) {
-      return obj.tokens.concat(obj.shortDescription.split(' '))
+    var filterDuplicateResults = function(matches) {
+      return matches.filter((match, pos, arr) => arr.findIndex(elm => elm.link === match.link) === pos);
     };
 
-    var data = new Bloodhound({
-      datumTokenizer: getSearchTermsFromTokensAndDescription,
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      local: searchResults
-    });
+    var customSearcher = function(data) {
+      return function findMatches(query, callback) {
+        var matches;
+        var substringRegex;
+
+        matches = [];
+        substrRegex = new RegExp(query, 'i');
+
+        data.forEach(function(elm, index) {
+          if (substrRegex.test(elm.shortDescription)) {
+            matches.push(elm);
+          }
+        });
+
+        refinedMatches = filterDuplicateResults(matches);
+
+        callback(refinedMatches);
+      };
+    };
 
     $('.suggestion-search__input').typeahead({
       classNames: {
@@ -33,7 +47,7 @@
     },
     {
       name: 'data',
-      source: data,
+      source: customSearcher(searchResults),
       display: 'shortDescription',
       limit: 5,
       templates: {
