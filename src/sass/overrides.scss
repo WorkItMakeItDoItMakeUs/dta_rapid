@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
+.uikit-page-alerts {
+  max-width: none !important;
+}
+
 .uikit-card {
   display: block;
   font-size: 120%;
@@ -20,6 +24,14 @@ h1, h2, h3, h4, h5, h6 {
   &:hover {
     background-color: inherit !important;
   }
+}
+
+.uikit-body abbr,
+.uikit-body abbr[title] {
+  font-size: inherit !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
 }
 
 .uikit-body {
