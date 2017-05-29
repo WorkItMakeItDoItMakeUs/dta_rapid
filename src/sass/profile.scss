@@ -1,5 +1,5 @@
 .profile__section-title {
-   padding-right: 0.6em;
+   margin-top: 0;
 }
 
 .profile__button {
@@ -24,15 +24,27 @@
 }
 
 .profile__section {
-  padding: 0.3em;
-  border: 3px transparent solid;
+  margin: 1em 0;
+  padding: 0.6em;
+  position: relative;
 }
 
 .profile__controls {
-  float: right;
+  margin-bottom: uikit-space(0.5);
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    float: right;
+  }
 }
 
 .js-profile__active {
-  border-color: $uikit-colour-Primary;
-  border-radius: 3px;
+  box-shadow: 0 0 0 3px $uikit-colour-Secondary-60;
+  background: $uikit-colour-Background;
+
+  .uikit-text-input__label::before {
+    content: "Editing…";
+    color: $uikit-colour-Primary;
+    float: right;
+  }
 }
