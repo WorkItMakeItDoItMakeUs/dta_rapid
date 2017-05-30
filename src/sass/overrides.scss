@@ -14,16 +14,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .uikit-card {
-  display: block;
-  font-size: 120%;
-  border-bottom: none !important;
-  padding: uikit-space(0.5);
-  text-align: center;
+  padding: uikit-space(0.0625) uikit-space(0.5);
   background-color: $uikit-colour-Background;
-
-  &:hover {
-    background-color: inherit !important;
-  }
 }
 
 .uikit-body abbr,
@@ -42,12 +34,19 @@ h1, h2, h3, h4, h5, h6 {
   h1 {
     line-height: 1.25;
   }
+  h2 {
+    margin: uikit-space(0.5) 0 uikit-space(0.25);
+  }
   h3 {
     margin: uikit-space(1.125) 0 uikit-space(0.5);
 
     &:first-of-type {
       margin: uikit-space(0.5) 0 uikit-space(0.5);
     }
+  }
+  hr {
+    border-color: $uikit-colour-Border-20 !important;
+    margin: 1.6em 0 !important;
   }
   .uikit-text-input {
     padding: uikit-space(0.5) uikit-space(0.25);
