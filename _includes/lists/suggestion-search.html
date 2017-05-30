@@ -54,13 +54,20 @@
       limit: 5,
       templates: {
         suggestion: function(result) {
-          return `<div role="option" aria-selected="false" class="suggestion-search__item"><a class="suggestion-search__link" href="${result.link}">${result.shortDescription}</a></div>`;
+            var onclick = result.login ? "event.preventDefault();" : " ";
+            return `<div role="option" aria-selected="false" class="suggestion-search__item">
+                <a onclick="${onclick}" class="suggestion-search__link" href="${result.link}">${result.shortDescription}</a></div>`;
         },
       }
     });
 
     $('.suggestion-search__input').bind('typeahead:select', function(e, suggestion) {
-      window.location.href = suggestion.link;
+      var loggedOut = localStorage.getItem('loggedIn') !== 'true';
+      if (suggestion.login && loggedOut) {
+          window.location.href = "/account_login.html"
+      } else {
+          window.location.href = suggestion.link;
+      }
     });
   });
 </script>

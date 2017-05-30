@@ -1,8 +1,7 @@
-$(function () {
-    $('.js-log-in').text(localStorage.getItem('loggedIn') ? "My Account" : "Log in");
 
-    $('.js-log-in').on('click', function (event) {
-        event.preventDefault();
+$(function () {
+
+    var _logMeIn = function () {
         var loggedIn = localStorage.getItem('loggedIn') === "true";
 
         if (!loggedIn) {
@@ -10,6 +9,12 @@ $(function () {
         } else {
             window.location.href = "/my-account.html"
         }
+    }
+
+    $('.js-log-in').on('click', function (event) {
+        event.preventDefault();
+        _logMeIn();
     });
+
 });
 
