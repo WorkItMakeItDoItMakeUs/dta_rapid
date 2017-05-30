@@ -12,7 +12,9 @@
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(e) {
     var filterDuplicateResults = function(matches) {
-      return matches.filter((match, pos, arr) => arr.findIndex(elm => elm.link === match.link) === pos);
+      return matches.filter(function(match, pos, arr) {
+        return arr.findIndex(function(elm) { return elm.link === match.link }) === pos;
+      });
     };
 
     var customSearcher = function(data) {
