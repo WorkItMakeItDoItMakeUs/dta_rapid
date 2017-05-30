@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $uikit-colour-Background;
 }
 
+.uikit-breadcrumbs {
+  display: block;
+  margin-top: uikit-space(0.5);
+}
+
 .uikit-body abbr,
 .uikit-body abbr[title] {
   font-size: inherit !important;

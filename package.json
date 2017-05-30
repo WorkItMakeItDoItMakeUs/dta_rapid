@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "devDependencies": {
+    "@gov.au/breadcrumbs": "^0.1.0",
     "browser-sync": "^2.18.8",
     "node-sass": "^4.5.1",
     "npm-run-all": "^4.0.2",
