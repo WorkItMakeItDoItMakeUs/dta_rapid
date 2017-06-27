@@ -50,12 +50,12 @@ handle_option() {
   case "$1" in
     major|1)
       ((major_version++))
-      new_version="${major_version}.${minor_version}.${patch_version}"
+      new_version="${major_version}.0.0"
       release_new_version $new_version
       ;;
     minor|2)
       ((minor_version++))
-      new_version="${major_version}.${minor_version}.${patch_version}"
+      new_version="${major_version}.${minor_version}.0"
       release_new_version $new_version
       ;;
     patch|3)
