@@ -1,5 +1,3 @@
----
----
 # dta_rapid Jekyll theme
 [See example site](https://gtrogers.github.io/dta_rapid/)
 
